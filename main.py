@@ -8,9 +8,9 @@ from sqlalchemy.orm import registry
 from sqlalchemy.orm import mapper, sessionmaker, Session
 import psycopg2
 
-# Ваша база данных
 engine = create_engine('postgresql://postgres:postgres@localhost:12000/postgres')
 session = Session(engine)
+# TODO use to test connection
 # connection = engine.connect()
 # print("Подключение к базе данных успешно.")
 # connection.close()
