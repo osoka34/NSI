@@ -1,0 +1,1 @@
+NSI_TABLE = 'nsi_data'
