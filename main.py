@@ -10,6 +10,7 @@ import psycopg2
 
 engine = create_engine('postgresql://postgres:postgres@localhost:12000/postgres')
 session = Session(engine)
+
 # TODO use to test connection
 # connection = engine.connect()
 # print("Подключение к базе данных успешно.")
