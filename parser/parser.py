@@ -29,9 +29,9 @@ class InfoParser:
         try:
             shutil.move(old_name, new_name)
         except FileNotFoundError:
-            print(f"Файл {old_name} не найден.")
+            print(f"File {old_name} not found.")
         except FileExistsError:
-            print(f"Файл {new_name} уже существует.")
+            print(f"File {new_name} already exists.")
 
     @staticmethod
     def download_from_web(url: str, save_path: str) -> None:
