@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine, Column, Integer, String, MetaData, Table, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, MetaData, Table, ForeignKey, Boolean
 from sqlalchemy.orm import registry, declarative_base, Session
-from repository.s_constant import NSI_TABLE
+from repository.s_constant import NSI_TABLE, LOG_TABLE
 
 Base = declarative_base()
 metadata = MetaData()
@@ -46,4 +46,19 @@ class NSIData(Base):
     delta_j2 = Column(String(100), default='')
     j2_sigma = Column(String(100), default='')
 
+class RequestLogs(Base):
+    __tablename__ = LOG_TABLE
+
+    id = Column(Integer, primary_key=True)
+    request_time = Column(Integer, default=0)
+    request_type = Column(String(100), default='')
+    request_data = Column(String(100), default='')
+    request_result = Column(Boolean, default=False)
+    request_duration = Column(Integer, default=0)
+    request_ip = Column(String(100), default='')
+    request_user_agent = Column(String(255), default='')
+    request_host = Column(String(100), default='')
+    request_path = Column(String(100), default='')
+    request_query = Column(String(100), default='')
+    request_body = Column(String(255), default='')
 

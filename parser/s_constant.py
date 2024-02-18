@@ -10,3 +10,6 @@ RE_PATTERN_SPACE_ENV = r"\s+(\d{4})\s+(\d{1,3})\s+(\d+\.\d+)\s+([\d\.-]+)\s+([\d
 D_TYPE_C20 = 3
 C20_FIELDS = ["year", "c20", "delta_c20", "c20_sigma", "delta_J2", "j2_sigma"]
 RE_PATTERN_C20 = r"\s+(\d+\.\d+)\s+(-?\d+\.\d+E[+-]\d+)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)\s+(-?\d+\.\d+)"
+
+
+TEMP_FILE = "./temp.txt"

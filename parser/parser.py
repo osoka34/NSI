@@ -1,19 +1,40 @@
 import re
 import requests
 import shutil
+import os
+
+import parser.s_constant
+from parser.s_constant import D_TYPE_EOP, D_TYPE_SPACE_ENV, D_TYPE_C20
+from parser.s_constant import EOP_FIELDS, RE_PATTERN_EOP
+from parser.s_constant import SPACE_ENV_FIELDS, RE_PATTERN_SPACE_ENV
+from parser.s_constant import C20_FIELDS, RE_PATTERN_C20
 
 
 class InfoParser:
-    def __init__(self, filename: str, fields: list[str], re_pattern: str, d_type: int):
-        self.filename = filename
-        self.fields = fields
-        self.re_pattern = re_pattern
-        self.re_compiled = re.compile(self.re_pattern)
+    # filename: str
+    fields: list[str]
+    re_pattern: str
+    re_compiled: re.Pattern
+
+    def __init__(self, d_type: int):
+        match d_type:
+            case parser.s_constant.D_TYPE_EOP:
+                self.fields = EOP_FIELDS
+                self.re_pattern = RE_PATTERN_EOP
+            case parser.parser.D_TYPE_SPACE_ENV:
+                self.fields = SPACE_ENV_FIELDS
+                self.re_pattern = RE_PATTERN_SPACE_ENV
+            case parser.s_constant.D_TYPE_C20:
+                self.fields = C20_FIELDS
+                self.re_pattern = RE_PATTERN_C20
+            case _:
+                raise ValueError(f"Unknown data type: {d_type}")
         self.d_type = d_type
 
-    def parse(self) -> list[dict]:
+    def parse(self, filename) -> list[dict]:
+        self.re_compiled = re.compile(self.re_pattern)
         out = []
-        with open(self.filename, 'r') as file:
+        with open(filename, 'r') as file:
             for line in file:
                 # print(line)
                 match = self.re_compiled.match(line)
@@ -42,3 +63,17 @@ class InfoParser:
                     file.write(chunk)
         except Exception as e:
             print(f"Error occurred while downloading the file: {e}")
+
+    @staticmethod
+    def delete_dir(dir_to_delete: str) -> None:
+        try:
+            shutil.rmtree(dir_to_delete)
+        except Exception as e:
+            print(f'Error occurred while deleting directory: {e}')
+
+    @staticmethod
+    def delete_file(file_to_delete: str) -> None:
+        try:
+            os.remove(file_to_delete)
+        except Exception as e:
+            print(f'Error occurred while deleting file: {e}')
