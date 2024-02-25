@@ -107,7 +107,6 @@ REFERENCE:   Cheng, M., B. D. Tapley, and J. C. Ries (2013), "Deceleration in th
 
 
 
--- TODO add only not empty fields
 CREATE VIEW view_set_1 AS
 SELECT id, d_type, year, month, day, mjd, x, y, ut1_utc, lod, dx, dy, x_err, y_err, ut1_utc_err, lod_err, dx_err, dy_err
 FROM nsi_data WHERE d_type = 1;
