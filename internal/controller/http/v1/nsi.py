@@ -10,7 +10,6 @@ router = APIRouter()
 async def load_nsi_data(
     dto: LoadNSIRequest,
     application_service: ApplicationService = Depends(),
-    # dto: LoadNSIRequest = Depends(),
 ) -> JSONResponse:
     """
     Load NSI data
@@ -21,7 +20,6 @@ async def load_nsi_data(
     Returns:
     JSONResponse: Default response with bool success and str message
     """
-    # application_service: ApplicationService = ApplicationService()
     return application_service.load_nsi_data(dto)
 
 
@@ -29,7 +27,6 @@ async def load_nsi_data(
 async def get_nsi_data(
     dto: GetNSIRequest,
     application_service: ApplicationService = Depends(),
-    # dto: GetNSIRequest = Depends(),
 ) -> dict:
     """
     Get NSI data
@@ -40,6 +37,5 @@ async def get_nsi_data(
     Returns:
     dict: json response with nsi data
     """
-    # application_service: ApplicationService = ApplicationService()
     return application_service.get_nsi_data(dto)
 
