@@ -1,0 +1,18 @@
+from fastapi import APIRouter
+from starlette.responses import JSONResponse
+
+router = APIRouter()
+
+
+@router.get('')
+## @brief     Health check
+#
+# @return
+# @return		JSONResponse	Health check status
+#
+
+async def health() -> JSONResponse:
+    return JSONResponse(
+        content={"status": "OK"},
+        status_code=200
+    )

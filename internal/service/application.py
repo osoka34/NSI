@@ -4,7 +4,7 @@ from starlette.responses import JSONResponse
 
 from internal.entity.repository import Repository
 from internal.usecase.parser import InfoParser
-from internal.dto import LoadNSIRequest, DefaultResponse, GetNSIRequest, GetNSIResponse
+from internal.dto import LoadNSIRequest, DefaultResponse, GetNSIRequest
 from internal.service import HTTP_400_BAD_REQUEST, HTTP_200_OK, HTTP_500_INTERNAL_ERROR
 from internal.usecase.utils import validate_dtype, generate_uuid
 

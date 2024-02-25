@@ -1,0 +1,64 @@
+\doxysection{service.\+application.\+Application\+Service Class Reference}
+\hypertarget{classservice_1_1application_1_1_application_service}{}\label{classservice_1_1application_1_1_application_service}\index{service.application.ApplicationService@{service.application.ApplicationService}}
+Inheritance diagram for service.\+application.\+Application\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classservice_1_1application_1_1_application_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classservice_1_1application_1_1_application_service_a62a196579d5687778e417ccecc15819e}\label{classservice_1_1application_1_1_application_service_a62a196579d5687778e417ccecc15819e} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+JSONResponse \mbox{\hyperlink{classservice_1_1application_1_1_application_service_a7c39c36c25a9a863a084b87ce742cd8c}{load\+\_\+nsi\+\_\+data}} (self, Load\+NSIRequest req)
+\item 
+JSONResponse\texorpdfstring{$\vert$}{|}dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{classservice_1_1application_1_1_application_service_ac2a79fccea27dbbcfe6d217c0c650129}{get\+\_\+nsi\+\_\+data}} (self, Get\+NSIRequest req)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classservice_1_1application_1_1_application_service_a45771720fa5ab85f011b825a2ad368d7}\label{classservice_1_1application_1_1_application_service_a45771720fa5ab85f011b825a2ad368d7} 
+{\bfseries repository}
+\item 
+\Hypertarget{classservice_1_1application_1_1_application_service_af1139757f7b04f118b1b5bf1b923129d}\label{classservice_1_1application_1_1_application_service_af1139757f7b04f118b1b5bf1b923129d} 
+{\bfseries parser}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classservice_1_1application_1_1_application_service_ac2a79fccea27dbbcfe6d217c0c650129}\label{classservice_1_1application_1_1_application_service_ac2a79fccea27dbbcfe6d217c0c650129} 
+\index{service.application.ApplicationService@{service.application.ApplicationService}!get\_nsi\_data@{get\_nsi\_data}}
+\index{get\_nsi\_data@{get\_nsi\_data}!service.application.ApplicationService@{service.application.ApplicationService}}
+\doxysubsubsection{\texorpdfstring{get\_nsi\_data()}{get\_nsi\_data()}}
+{\footnotesize\ttfamily  JSONResponse \texorpdfstring{$\vert$}{|} dict\mbox{[}str, Any\mbox{]} service.\+application.\+Application\+Service.\+get\+\_\+nsi\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Get\+NSIRequest}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Gets NSI data from the database and returns a JSON object response.
+
+Args:
+req: GetNSIRequest - request object
+
+Returns:
+JSONResponse - response object
+\end{DoxyVerb}
+ \Hypertarget{classservice_1_1application_1_1_application_service_a7c39c36c25a9a863a084b87ce742cd8c}\label{classservice_1_1application_1_1_application_service_a7c39c36c25a9a863a084b87ce742cd8c} 
+\index{service.application.ApplicationService@{service.application.ApplicationService}!load\_nsi\_data@{load\_nsi\_data}}
+\index{load\_nsi\_data@{load\_nsi\_data}!service.application.ApplicationService@{service.application.ApplicationService}}
+\doxysubsubsection{\texorpdfstring{load\_nsi\_data()}{load\_nsi\_data()}}
+{\footnotesize\ttfamily  JSONResponse service.\+application.\+Application\+Service.\+load\+\_\+nsi\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Load\+NSIRequest}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Loads NSI data to the database.
+Downloads the file from the web, parses it and adds the data to the database.
+
+Args:
+req: LoadNSIRequest - request object
+
+Returns:
+JSONResponse - response object
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+internal/service/application.\+py\end{DoxyCompactItemize}

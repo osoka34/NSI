@@ -1,0 +1,25 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
+from config import CONFIG as CFG
+
+db_url = (f"postgresql://{CFG['db']['user']}:{CFG['db']['password']}@"
+          f"{CFG['db']['host']}:{CFG['db']['port']}/{CFG['db']['database']}")
+
+
+## @brief     Returns a session to the database.
+#
+#
+# @param		db_url	str - database URL
+#
+# @return
+# @return		Session	session to the database
+#
+
+def get_session() -> Session:
+    engine = create_engine(db_url)
+    ## @var _session
+    # @hideinitializer
+    # @protected
+    _session = sessionmaker(bind=engine)
+    session = _session()
+    return session

@@ -1,0 +1,126 @@
+\doxysection{repository.\+repository.\+Repository Class Reference}
+\hypertarget{classrepository_1_1repository_1_1_repository}{}\label{classrepository_1_1repository_1_1_repository}\index{repository.repository.Repository@{repository.repository.Repository}}
+Inheritance diagram for repository.\+repository.\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrepository_1_1repository_1_1_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrepository_1_1repository_1_1_repository_af7b98c870aa8205051584a68dc40d347}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Session session=get\+\_\+session())
+\item 
+\mbox{\hyperlink{classrepository_1_1repository_1_1_repository_a67cac12d27307ff690dc4c07ea729c6f}{close}} (self)
+\item 
+None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_a4bbf952713984bd22f1153dd0a0fc8eb}{add\+\_\+nsi\+\_\+data\+\_\+list}} (self, list\mbox{[}dict\mbox{]} data)
+\item 
+None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_ae4cfbb12eef4829518f69b345502cb8f}{add\+\_\+nsi\+\_\+data\+\_\+one}} (self, dict data)
+\item 
+None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_aa5ac1799e17d99fc2ae104435e5614c2}{add\+\_\+request\+\_\+logs}} (self, \mbox{\hyperlink{classrepository_1_1model_1_1_request_logs}{Request\+Logs}} data)
+\item 
+list \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_a8c72352ed01d0c35fe950f4e3be69443}{get\+\_\+nsi\+\_\+data}} (self)
+\item 
+list\mbox{[}\mbox{\hyperlink{classrepository_1_1model_1_1_n_s_i_data}{NSIData}}\mbox{]} \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_ac7378b677df27291cf11e3d36e670d0b}{get\+\_\+nsi\+\_\+data\+\_\+view}} (self, int d\+\_\+type, int limit=10)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrepository_1_1repository_1_1_repository_ab8d72ab45e9bebc17db47b83a537ac91}\label{classrepository_1_1repository_1_1_repository_ab8d72ab45e9bebc17db47b83a537ac91} 
+{\bfseries session}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class for working with the database.
+
+Attributes:
+session: Session - connection to the database
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classrepository_1_1repository_1_1_repository_af7b98c870aa8205051584a68dc40d347}\label{classrepository_1_1repository_1_1_repository_af7b98c870aa8205051584a68dc40d347} 
+\index{repository.repository.Repository@{repository.repository.Repository}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily repository.\+repository.\+Repository.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Session }]{session = {\ttfamily get\+\_\+session()} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor for Repository class.
+Creates a connection to the database.
+We use Depends to get the session from the get_session function.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classrepository_1_1repository_1_1_repository_a4bbf952713984bd22f1153dd0a0fc8eb}\label{classrepository_1_1repository_1_1_repository_a4bbf952713984bd22f1153dd0a0fc8eb} 
+\index{repository.repository.Repository@{repository.repository.Repository}!add\_nsi\_data\_list@{add\_nsi\_data\_list}}
+\index{add\_nsi\_data\_list@{add\_nsi\_data\_list}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{add\_nsi\_data\_list()}{add\_nsi\_data\_list()}}
+{\footnotesize\ttfamily  None repository.\+repository.\+Repository.\+add\+\_\+nsi\+\_\+data\+\_\+list (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}dict\mbox{]}}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds data to the database.
+Converts list of dictionaries to list of NSIData instances and adds them to the database.
+
+Args:
+data: list[dict] - list of dictionaries with data\end{DoxyVerb}
+ \Hypertarget{classrepository_1_1repository_1_1_repository_ae4cfbb12eef4829518f69b345502cb8f}\label{classrepository_1_1repository_1_1_repository_ae4cfbb12eef4829518f69b345502cb8f} 
+\index{repository.repository.Repository@{repository.repository.Repository}!add\_nsi\_data\_one@{add\_nsi\_data\_one}}
+\index{add\_nsi\_data\_one@{add\_nsi\_data\_one}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{add\_nsi\_data\_one()}{add\_nsi\_data\_one()}}
+{\footnotesize\ttfamily  None repository.\+repository.\+Repository.\+add\+\_\+nsi\+\_\+data\+\_\+one (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{dict}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds data to the database.
+Converts dictionary to NSIData instance and adds it to the database.
+
+Args:
+data: dict - dictionary with data\end{DoxyVerb}
+ \Hypertarget{classrepository_1_1repository_1_1_repository_aa5ac1799e17d99fc2ae104435e5614c2}\label{classrepository_1_1repository_1_1_repository_aa5ac1799e17d99fc2ae104435e5614c2} 
+\index{repository.repository.Repository@{repository.repository.Repository}!add\_request\_logs@{add\_request\_logs}}
+\index{add\_request\_logs@{add\_request\_logs}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{add\_request\_logs()}{add\_request\_logs()}}
+{\footnotesize\ttfamily  None repository.\+repository.\+Repository.\+add\+\_\+request\+\_\+logs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classrepository_1_1model_1_1_request_logs}{Request\+Logs}}}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds request logs to the database.
+
+Args:
+data: RequestLogs - request logs instance\end{DoxyVerb}
+ \Hypertarget{classrepository_1_1repository_1_1_repository_a67cac12d27307ff690dc4c07ea729c6f}\label{classrepository_1_1repository_1_1_repository_a67cac12d27307ff690dc4c07ea729c6f} 
+\index{repository.repository.Repository@{repository.repository.Repository}!close@{close}}
+\index{close@{close}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily repository.\+repository.\+Repository.\+close (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Closes the connection to the database.
+\end{DoxyVerb}
+ \Hypertarget{classrepository_1_1repository_1_1_repository_a8c72352ed01d0c35fe950f4e3be69443}\label{classrepository_1_1repository_1_1_repository_a8c72352ed01d0c35fe950f4e3be69443} 
+\index{repository.repository.Repository@{repository.repository.Repository}!get\_nsi\_data@{get\_nsi\_data}}
+\index{get\_nsi\_data@{get\_nsi\_data}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{get\_nsi\_data()}{get\_nsi\_data()}}
+{\footnotesize\ttfamily  list repository.\+repository.\+Repository.\+get\+\_\+nsi\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Gets all NSI data from the database.
+
+Returns:
+list[NSIData] - list of NSIData instances\end{DoxyVerb}
+ \Hypertarget{classrepository_1_1repository_1_1_repository_ac7378b677df27291cf11e3d36e670d0b}\label{classrepository_1_1repository_1_1_repository_ac7378b677df27291cf11e3d36e670d0b} 
+\index{repository.repository.Repository@{repository.repository.Repository}!get\_nsi\_data\_view@{get\_nsi\_data\_view}}
+\index{get\_nsi\_data\_view@{get\_nsi\_data\_view}!repository.repository.Repository@{repository.repository.Repository}}
+\doxysubsubsection{\texorpdfstring{get\_nsi\_data\_view()}{get\_nsi\_data\_view()}}
+{\footnotesize\ttfamily  list\mbox{[}\mbox{\hyperlink{classrepository_1_1model_1_1_n_s_i_data}{NSIData}}\mbox{]} repository.\+repository.\+Repository.\+get\+\_\+nsi\+\_\+data\+\_\+view (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{d\+\_\+type,  }\item[{int }]{limit = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Gets NSI data from the database by type.
+Uses limit to get a limited amount of data.
+If limit set to 0, gets all data of the specified type.
+
+Args:
+d_type: int - data type
+limit: int - limit of data, default 10
+
+Returns:
+list[NSIData] - list of NSIData instances
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+internal/entity/repository/repository.\+py\end{DoxyCompactItemize}

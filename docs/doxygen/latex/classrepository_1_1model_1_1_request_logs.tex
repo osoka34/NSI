@@ -1,0 +1,58 @@
+\doxysection{repository.\+model.\+Request\+Logs Class Reference}
+\hypertarget{classrepository_1_1model_1_1_request_logs}{}\label{classrepository_1_1model_1_1_request_logs}\index{repository.model.RequestLogs@{repository.model.RequestLogs}}
+Inheritance diagram for repository.\+model.\+Request\+Logs\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrepository_1_1model_1_1_request_logs}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_ac58fb13e0912f55a7a73f82043f8f84e}\label{classrepository_1_1model_1_1_request_logs_ac58fb13e0912f55a7a73f82043f8f84e} 
+{\bfseries id} = Column(Integer, primary\+\_\+key=True)
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a893af1f5fdc0e0167c01eed3035e88f0}\label{classrepository_1_1model_1_1_request_logs_a893af1f5fdc0e0167c01eed3035e88f0} 
+{\bfseries request\+\_\+time} = Column(Integer, default=0)
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a41118e8757df72126d66a91fe9767a0c}\label{classrepository_1_1model_1_1_request_logs_a41118e8757df72126d66a91fe9767a0c} 
+{\bfseries request\+\_\+type} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_ad2bc76a8f22d53407c701b3ff810362c}\label{classrepository_1_1model_1_1_request_logs_ad2bc76a8f22d53407c701b3ff810362c} 
+{\bfseries request\+\_\+data} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a0377b8d8360a175714d7fd05c63de299}\label{classrepository_1_1model_1_1_request_logs_a0377b8d8360a175714d7fd05c63de299} 
+{\bfseries request\+\_\+result} = Column(Boolean, default=False)
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_afac76bb60bb4f8d1a0e52303fdd82e2d}\label{classrepository_1_1model_1_1_request_logs_afac76bb60bb4f8d1a0e52303fdd82e2d} 
+{\bfseries request\+\_\+duration} = Column(Integer, default=0)
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_aac821d290ff9afbff411d2dcf78025d5}\label{classrepository_1_1model_1_1_request_logs_aac821d290ff9afbff411d2dcf78025d5} 
+{\bfseries request\+\_\+ip} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a3d2e939a1baa6af993732963a706993c}\label{classrepository_1_1model_1_1_request_logs_a3d2e939a1baa6af993732963a706993c} 
+{\bfseries request\+\_\+user\+\_\+agent} = Column(String(255), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a946fcb7ba5b0c4be64047b83ee70a375}\label{classrepository_1_1model_1_1_request_logs_a946fcb7ba5b0c4be64047b83ee70a375} 
+{\bfseries request\+\_\+host} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a8a17ee567eb7044ac27b89d05168b46a}\label{classrepository_1_1model_1_1_request_logs_a8a17ee567eb7044ac27b89d05168b46a} 
+{\bfseries request\+\_\+path} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_ac56904d74e118386a9b0cd442567af43}\label{classrepository_1_1model_1_1_request_logs_ac56904d74e118386a9b0cd442567af43} 
+{\bfseries request\+\_\+query} = Column(String(100), default=\textquotesingle{}\textquotesingle{})
+\item 
+\Hypertarget{classrepository_1_1model_1_1_request_logs_a03e78ebec8bfc04d8975bcc0a15a09cf}\label{classrepository_1_1model_1_1_request_logs_a03e78ebec8bfc04d8975bcc0a15a09cf} 
+{\bfseries request\+\_\+body} = Column(String(255), default=\textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class for request logs.
+Contains all the possible fields for the request logs.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+internal/entity/repository/model.\+py\end{DoxyCompactItemize}

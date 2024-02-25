@@ -12,6 +12,15 @@ async def load_nsi_data(
     # application_service: ApplicationService = ApplicationService(),
     # dto: LoadNSIRequest = Depends(),
 ) -> JSONResponse:
+    """
+    Load NSI data
+
+    Args:
+    dto (LoadNSIRequest): LoadNSIRequest
+
+    Returns:
+    JSONResponse: Default response with bool success and str message
+    """
     application_service: ApplicationService = ApplicationService()
     return application_service.load_nsi_data(dto)
 
@@ -21,6 +30,15 @@ async def get_nsi_data(
     dto: GetNSIRequest,
     # dto: GetNSIRequest = Depends(),
 ) -> dict:
+    """
+    Get NSI data
+
+    Args:
+    dto (GetNSIRequest): GetNSIRequest
+
+    Returns:
+    dict: json response with nsi data
+    """
     application_service: ApplicationService = ApplicationService()
     return application_service.get_nsi_data(dto)
 

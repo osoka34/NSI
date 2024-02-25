@@ -22,6 +22,9 @@ def validate_dtype(d_type: int) -> bool:
 
 
 def generate_uuid():
+    """
+    Generates a UUID.
+    """
     return str(uuid.uuid4())
 
 

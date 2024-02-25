@@ -6,6 +6,12 @@ from internal.controller.http.v1 import middleware
 
 
 def create_app() -> FastAPI:
+    """
+    Create FastAPI app
+
+    Returns:
+    FastAPI app
+    """
     app = FastAPI()
 
     app.add_middleware(

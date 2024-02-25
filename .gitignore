@@ -4,3 +4,5 @@ parser/c20.py
 .idea
 .DS_Store
 __pycache__
+.gitignore
+test_main.py

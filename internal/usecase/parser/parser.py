@@ -7,6 +7,7 @@ import internal.usecase.parser.s_constant
 from internal.usecase.parser import EOP_FIELDS, RE_PATTERN_EOP
 from internal.usecase.parser import SPACE_ENV_FIELDS, RE_PATTERN_SPACE_ENV
 from internal.usecase.parser import C20_FIELDS, RE_PATTERN_C20
+from internal.usecase.parser import RE_EOP_COMPILED, RE_SPACE_ENV_COMPILED, RE_C20_COMPILED
 
 
 class InfoParser:
@@ -30,21 +31,25 @@ class InfoParser:
         """
         fields: list[str]
         re_pattern: str
+        re_compiled: re.Pattern
 
         match d_type:
             case internal.usecase.parser.s_constant.D_TYPE_EOP:
                 fields = EOP_FIELDS
-                re_pattern = RE_PATTERN_EOP
+                # re_pattern = RE_PATTERN_EOP
+                re_compiled = RE_EOP_COMPILED
             case internal.usecase.parser.s_constant.D_TYPE_SPACE_ENV:
                 fields = SPACE_ENV_FIELDS
-                re_pattern = RE_PATTERN_SPACE_ENV
+                # re_pattern = RE_PATTERN_SPACE_ENV
+                re_compiled = RE_SPACE_ENV_COMPILED
             case internal.usecase.parser.s_constant.D_TYPE_C20:
                 fields = C20_FIELDS
-                re_pattern = RE_PATTERN_C20
+                # re_pattern = RE_PATTERN_C20
+                re_compiled = RE_C20_COMPILED
             case _:
                 raise ValueError(f"Unknown data type: {d_type}")
 
-        re_compiled = re.compile(re_pattern)
+        # re_compiled = re.compile(re_pattern)
         out = []
         with open(filename, 'r') as file:
             for line in file:
