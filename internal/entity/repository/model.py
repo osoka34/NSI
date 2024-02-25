@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, Column, Integer, String, MetaData, Table, ForeignKey, Boolean
 from sqlalchemy.orm import registry, declarative_base, Session
-from repository.s_constant import NSI_TABLE, LOG_TABLE
+from internal.entity.repository.s_constant import NSI_TABLE, LOG_TABLE
 
 Base = declarative_base()
 metadata = MetaData()

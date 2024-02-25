@@ -1,6 +1,3 @@
-parser/eop.py
-parser/space_env.py
-parser/c20.py
 .idea
 .DS_Store
 __pycache__

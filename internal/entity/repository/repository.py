@@ -1,7 +1,7 @@
 from internal.usecase.utils import get_session
 from fastapi import Depends
 
-from repository.model import NSIData, RequestLogs
+from internal.entity.repository.model import NSIData, RequestLogs
 from sqlalchemy.orm import Session
 
 
