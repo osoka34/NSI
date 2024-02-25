@@ -5,6 +5,7 @@ from repository.s_constant import NSI_TABLE, LOG_TABLE
 Base = declarative_base()
 metadata = MetaData()
 
+
 class NSIData(Base):
     """
     Class for NSI data.
@@ -54,6 +55,7 @@ class NSIData(Base):
     delta_j2 = Column(String(100), default='')
     j2_sigma = Column(String(100), default='')
 
+
 class RequestLogs(Base):
     """
     Class for request logs.
@@ -73,4 +75,3 @@ class RequestLogs(Base):
     request_path = Column(String(100), default='')
     request_query = Column(String(100), default='')
     request_body = Column(String(255), default='')
-

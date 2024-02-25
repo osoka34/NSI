@@ -3,79 +3,56 @@ import requests
 import shutil
 import os
 
-import parser.s_constant
-from parser.s_constant import D_TYPE_EOP, D_TYPE_SPACE_ENV, D_TYPE_C20
-from parser.s_constant import EOP_FIELDS, RE_PATTERN_EOP
-from parser.s_constant import SPACE_ENV_FIELDS, RE_PATTERN_SPACE_ENV
-from parser.s_constant import C20_FIELDS, RE_PATTERN_C20
+import internal.usecase.parser.s_constant
+from internal.usecase.parser import EOP_FIELDS, RE_PATTERN_EOP
+from internal.usecase.parser import SPACE_ENV_FIELDS, RE_PATTERN_SPACE_ENV
+from internal.usecase.parser import C20_FIELDS, RE_PATTERN_C20
 
 
 class InfoParser:
     """
-    Class for parsing data from files.
-
-    Attributes:
-    fields: list[str] - fields of the data to be parsed
-    re_pattern: str - regular expression pattern for parsing the data
-    re_compiled: re.Pattern - compiled regular expression pattern
-    d_type: int - data type
-
+    Class for parsing data from files and other file operations.
     """
 
-    # filename: str
-    fields: list[str]
-    re_pattern: str
-    re_compiled: re.Pattern
-
-    def __init__(self, d_type: int):
-        """
-        Constructor for InfoParser class.
-
-        Before using this class, you need to specify the data type.
-        Here are the available data types:
-        - D_TYPE_EOP
-        - D_TYPE_SPACE_ENV
-        - D_TYPE_C20
-
-        Args:
-        d_type: int - data type
-
-        """
-        match d_type:
-            case parser.s_constant.D_TYPE_EOP:
-                self.fields = EOP_FIELDS
-                self.re_pattern = RE_PATTERN_EOP
-            case parser.parser.D_TYPE_SPACE_ENV:
-                self.fields = SPACE_ENV_FIELDS
-                self.re_pattern = RE_PATTERN_SPACE_ENV
-            case parser.s_constant.D_TYPE_C20:
-                self.fields = C20_FIELDS
-                self.re_pattern = RE_PATTERN_C20
-            case _:
-                raise ValueError(f"Unknown data type: {d_type}")
-        self.d_type = d_type
-
-    def parse(self, filename: str) -> list[dict]:
+    @staticmethod
+    def parse(filename: str, d_type: int) -> list[dict]:
         """
         Parses the data from the file.
         Using the regular expression pattern,
-        he data is parsed and stored in a list of dictionaries.
+        data is parsed and stored in a list of dictionaries.
 
         Args:
         filename: str - name of the file to parse
+        d_type: int - data type
 
         Returns:
         list[dict] - list of parsed data
         """
-        self.re_compiled = re.compile(self.re_pattern)
+        fields: list[str]
+        re_pattern: str
+
+        match d_type:
+            case internal.usecase.parser.s_constant.D_TYPE_EOP:
+                fields = EOP_FIELDS
+                re_pattern = RE_PATTERN_EOP
+            case internal.usecase.parser.s_constant.D_TYPE_SPACE_ENV:
+                fields = SPACE_ENV_FIELDS
+                re_pattern = RE_PATTERN_SPACE_ENV
+            case internal.usecase.parser.s_constant.D_TYPE_C20:
+                fields = C20_FIELDS
+                re_pattern = RE_PATTERN_C20
+            case _:
+                raise ValueError(f"Unknown data type: {d_type}")
+
+        re_compiled = re.compile(re_pattern)
         out = []
         with open(filename, 'r') as file:
             for line in file:
-                match = self.re_compiled.match(line)
+                match = re_compiled.match(line)
                 if match:
                     values = match.groups()
-                    parsed_data = dict(zip(self.fields, values))
-                    parsed_data["d_type"] = self.d_type
+                    parsed_data = dict(zip(fields, values))
+                    parsed_data["d_type"] = d_type
                     out.append(parsed_data)
         return out
 

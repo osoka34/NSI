@@ -5,7 +5,7 @@ FROM python:3.12
 WORKDIR /app
 
 # Копируем файл requirements.txt
-COPY requirements.txt .
+COPY ../requirements.txt .
 
 # Устанавливаем зависимости
 #RUN apt-get update \
@@ -19,7 +19,7 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY .. .
 
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1

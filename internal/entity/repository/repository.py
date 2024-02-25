@@ -1,36 +1,37 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from internal.usecase.utils import get_session
+from fastapi import Depends
 
 from repository.model import NSIData, RequestLogs
+from sqlalchemy.orm import Session
 
 
-class Repository:
+class Repository(object):
     """
     Class for working with the database.
 
     Attributes:
     session: Session - connection to the database
     """
-    def __init__(self, db_url: str):
+
+    def __init__(
+            self,
+            session: Session = get_session()
+    ):
         """
         Constructor for Repository class.
         Creates a connection to the database.
+        We use Depends to get the session from the get_session function.
 
-        Args:
-        db_url: str - database url
         """
-        # TODO это урл для подключения к контейнеру, при запуске в докере
-        # чтобы запустить на хосте нужно заменить на 'postgresql://postgres:postgres@localhost:12000/postgres'
-        # engine = create_engine('postgresql://postgres:postgres@localhost:12000/postgres')
-        engine = create_engine(db_url)
-        self.session = Session(engine)
+        self.session = session
 
-    def __del__(self):
-        """
-        Destructor for Repository class.
-        Closes the connection to the database.
-        """
-        self.close()
+    # def __del__(self):
+    #     """
+    #     Destructor for Repository class.
+    #     Closes the connection to the database.
+    #     """
+    #     if self.session:
+    #         self.session.close()
 
     def close(self):
         """
@@ -107,14 +108,12 @@ class Repository:
         Uses limit to get a limited amount of data.
         If limit set to 0, gets all data of the specified type.
 
-
         Args:
         d_type: int - data type
         limit: int - limit of data, default 10
 
         Returns:
         list[NSIData] - list of NSIData instances
-
         """
         if limit:
             try:
@@ -128,4 +127,3 @@ class Repository:
             except Exception as e:
                 print(f"Error occurred while getting data from the database: {e}")
                 return []
-
