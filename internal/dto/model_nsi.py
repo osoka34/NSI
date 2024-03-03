@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from starlette.responses import JSONResponse
 
 
 class LoadNSIRequest(BaseModel):
@@ -32,3 +33,12 @@ class GetNSIResponse(BaseModel):
     success: bool
     description: str
     data: list
+
+
+NSI_BAD_REQUEST = JSONResponse(
+                content=DefaultResponse(
+                    success=False,
+                    description="Invalid data type"
+                ).dict(),
+                status_code=400,
+            )

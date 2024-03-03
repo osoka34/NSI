@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from internal.service.application import ApplicationService
+from internal.service.application_nsi import ApplicationNSIService
 from internal.dto import LoadNSIRequest, GetNSIRequest
 
 router = APIRouter()
@@ -9,7 +9,7 @@ router = APIRouter()
 @router.post('/load_nsi_data')
 async def load_nsi_data(
     dto: LoadNSIRequest,
-    application_service: ApplicationService = Depends(),
+    application_service: ApplicationNSIService = Depends(),
 ) -> JSONResponse:
     """
     Load NSI data
@@ -26,7 +26,7 @@ async def load_nsi_data(
 @router.post('/get_nsi_data')
 async def get_nsi_data(
     dto: GetNSIRequest,
-    application_service: ApplicationService = Depends(),
+    application_service: ApplicationNSIService = Depends(),
 ) -> dict:
     """
     Get NSI data
