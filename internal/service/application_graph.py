@@ -7,7 +7,6 @@ from internal.service import HTTP_200_OK, INTERNAL_ERROR
 from internal.usecase.utils import validate_size
 
 
-
 class ApplicationGraphService(object):
     def __init__(self):
         pass
