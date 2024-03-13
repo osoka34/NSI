@@ -1,0 +1,130 @@
+\doxysection{service.\+application\+\_\+nsi.\+Application\+NSIService Class Reference}
+\hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service}{}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service}\index{service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}}
+Inheritance diagram for service.\+application\+\_\+nsi.\+Application\+NSIService\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classservice_1_1application__nsi_1_1_application_n_s_i_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classservice_1_1application__nsi_1_1_application_n_s_i_service_a5876454020bde239ec754773cf1565f4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+JSONResponse \mbox{\hyperlink{classservice_1_1application__nsi_1_1_application_n_s_i_service_ab79650361e1a0dd22bb1c582037abbe8}{load\+\_\+nsi\+\_\+data}} (self, Load\+NSIRequest req)
+\item 
+JSONResponse\texorpdfstring{$\vert$}{|}dict\mbox{[}str, Any\mbox{]} \mbox{\hyperlink{classservice_1_1application__nsi_1_1_application_n_s_i_service_ae893a922046acc237ffabd406d41af17}{get\+\_\+nsi\+\_\+data}} (self, Get\+NSIRequest req)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service_a2cc52d1b3292809f043b86cdb9e149a8}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service_a2cc52d1b3292809f043b86cdb9e149a8} 
+{\bfseries repository}
+\item 
+\Hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service_a1b27bb54f722437afb14bf3b2ec82213}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service_a1b27bb54f722437afb14bf3b2ec82213} 
+{\bfseries parser}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service_a5876454020bde239ec754773cf1565f4}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service_a5876454020bde239ec754773cf1565f4} 
+\index{service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily service.\+application\+\_\+nsi.\+Application\+NSIService.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}ApplicationNSIService constructor
+
+repository: Repository - repository object
+parser: InfoParser - parser object
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service_ae893a922046acc237ffabd406d41af17}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service_ae893a922046acc237ffabd406d41af17} 
+\index{service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}!get\_nsi\_data@{get\_nsi\_data}}
+\index{get\_nsi\_data@{get\_nsi\_data}!service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}}
+\doxysubsubsection{\texorpdfstring{get\_nsi\_data()}{get\_nsi\_data()}}
+{\footnotesize\ttfamily  JSONResponse \texorpdfstring{$\vert$}{|} dict\mbox{[}str, Any\mbox{]} service.\+application\+\_\+nsi.\+Application\+NSIService.\+get\+\_\+nsi\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Get\+NSIRequest}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Gets NSI data from the database and returns a JSON object response.
+
+Args:
+req: GetNSIRequest - request object
+
+Example:
+    {
+        "data_type": 1,
+        "limit": 10
+    }
+
+Returns:
+JSONResponse - response object
+
+Examples:
+    Success 200:
+    {
+        "data": [
+            {
+                "id": 1,
+                "value1": val,
+                "value2": val,
+            }
+        ],
+        "success": true,
+        "description": "Data loaded"
+    }
+    Failure 400:
+    {
+        "success": false,
+        "description": "Data type is not valid"
+    }
+    Failure 500:
+    {
+        "success": false,
+        "description": "Internal server error"
+    }
+\end{DoxyVerb}
+ \Hypertarget{classservice_1_1application__nsi_1_1_application_n_s_i_service_ab79650361e1a0dd22bb1c582037abbe8}\label{classservice_1_1application__nsi_1_1_application_n_s_i_service_ab79650361e1a0dd22bb1c582037abbe8} 
+\index{service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}!load\_nsi\_data@{load\_nsi\_data}}
+\index{load\_nsi\_data@{load\_nsi\_data}!service.application\_nsi.ApplicationNSIService@{service.application\_nsi.ApplicationNSIService}}
+\doxysubsubsection{\texorpdfstring{load\_nsi\_data()}{load\_nsi\_data()}}
+{\footnotesize\ttfamily  JSONResponse service.\+application\+\_\+nsi.\+Application\+NSIService.\+load\+\_\+nsi\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Load\+NSIRequest}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Loads NSI data to the database.
+Downloads the file from the web, parses it and adds the data to the database.
+
+Args:
+req: LoadNSIRequest - request object
+
+Example:
+    {
+        "download_link": "https://www.example.com/data.txt",
+        "data_type": 1
+    }
+
+Returns:
+JSONResponse - response object
+
+Examples:
+    Success 200:
+    {
+        "success": true,
+        "description": "Data loaded"
+    }
+    Failure 400:
+    {
+        "success": false,
+        "description": "Download link is empty"
+    }
+    Failure 500:
+    {
+        "success": false,
+        "description": "Internal server error"
+    }
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+internal/service/application\+\_\+nsi.\+py\end{DoxyCompactItemize}

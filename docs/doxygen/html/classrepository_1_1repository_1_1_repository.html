@@ -99,11 +99,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4bbf952713984bd22f1153dd0a0fc8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4cfbb12eef4829518f69b345502cb8f" id="r_ae4cfbb12eef4829518f69b345502cb8f"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4cfbb12eef4829518f69b345502cb8f">add_nsi_data_one</a> (self, dict data)</td></tr>
 <tr class="separator:ae4cfbb12eef4829518f69b345502cb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5ac1799e17d99fc2ae104435e5614c2" id="r_aa5ac1799e17d99fc2ae104435e5614c2"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ac1799e17d99fc2ae104435e5614c2">add_request_logs</a> (self, <a class="el" href="classrepository_1_1model_1_1_request_logs.html">RequestLogs</a> data)</td></tr>
+<tr class="memitem:aa5ac1799e17d99fc2ae104435e5614c2" id="r_aa5ac1799e17d99fc2ae104435e5614c2"><td class="memItemLeft" align="right" valign="top">None&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ac1799e17d99fc2ae104435e5614c2">add_request_logs</a> (self, RequestLogs data)</td></tr>
 <tr class="separator:aa5ac1799e17d99fc2ae104435e5614c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c72352ed01d0c35fe950f4e3be69443" id="r_a8c72352ed01d0c35fe950f4e3be69443"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c72352ed01d0c35fe950f4e3be69443">get_nsi_data</a> (self)</td></tr>
 <tr class="separator:a8c72352ed01d0c35fe950f4e3be69443"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7378b677df27291cf11e3d36e670d0b" id="r_ac7378b677df27291cf11e3d36e670d0b"><td class="memItemLeft" align="right" valign="top">list[<a class="el" href="classrepository_1_1model_1_1_n_s_i_data.html">NSIData</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7378b677df27291cf11e3d36e670d0b">get_nsi_data_view</a> (self, int d_type, int limit=10)</td></tr>
+<tr class="memitem:ac7378b677df27291cf11e3d36e670d0b" id="r_ac7378b677df27291cf11e3d36e670d0b"><td class="memItemLeft" align="right" valign="top">list[NSIData]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7378b677df27291cf11e3d36e670d0b">get_nsi_data_view</a> (self, int d_type, int limit=10)</td></tr>
 <tr class="separator:ac7378b677df27291cf11e3d36e670d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -138,7 +138,9 @@ session: Session - connection to the database
 </div><div class="memdoc">
 <pre class="fragment">Constructor for Repository class.
 Creates a connection to the database.
-We use Depends to get the session from the get_session function.</pre> 
+
+session: Session - connection to the database
+</pre> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -206,7 +208,7 @@ data: dict - dictionary with data</pre>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classrepository_1_1model_1_1_request_logs.html">RequestLogs</a></td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+          <td class="paramtype">RequestLogs</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -261,7 +263,7 @@ list[NSIData] - list of NSIData instances</pre>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> list[<a class="el" href="classrepository_1_1model_1_1_n_s_i_data.html">NSIData</a>] repository.repository.Repository.get_nsi_data_view </td>
+          <td class="memname"> list[NSIData] repository.repository.Repository.get_nsi_data_view </td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em>, </span></td>
         </tr>

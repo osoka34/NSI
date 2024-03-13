@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['getnsirequest_0',['GetNSIRequest',['../classdto_1_1model_1_1_get_n_s_i_request.html',1,'dto::model']]],
-  ['getnsiresponse_1',['GetNSIResponse',['../classdto_1_1model_1_1_get_n_s_i_response.html',1,'dto::model']]]
+  ['defaultresponse_0',['DefaultResponse',['../classdto_1_1model__nsi_1_1_default_response.html',1,'dto::model_nsi']]]
 ];

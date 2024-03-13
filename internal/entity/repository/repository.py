@@ -20,18 +20,10 @@ class Repository(object):
         """
         Constructor for Repository class.
         Creates a connection to the database.
-        We use Depends to get the session from the get_session function.
 
+        session: Session - connection to the database
         """
         self.session = session
-
-    # def __del__(self):
-    #     """
-    #     Destructor for Repository class.
-    #     Closes the connection to the database.
-    #     """
-    #     if self.session:
-    #         self.session.close()
 
     def close(self):
         """

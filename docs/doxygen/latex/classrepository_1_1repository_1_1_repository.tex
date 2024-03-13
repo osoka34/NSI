@@ -17,11 +17,11 @@ None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_a4bbf95271398
 \item 
 None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_ae4cfbb12eef4829518f69b345502cb8f}{add\+\_\+nsi\+\_\+data\+\_\+one}} (self, dict data)
 \item 
-None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_aa5ac1799e17d99fc2ae104435e5614c2}{add\+\_\+request\+\_\+logs}} (self, \mbox{\hyperlink{classrepository_1_1model_1_1_request_logs}{Request\+Logs}} data)
+None \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_aa5ac1799e17d99fc2ae104435e5614c2}{add\+\_\+request\+\_\+logs}} (self, Request\+Logs data)
 \item 
 list \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_a8c72352ed01d0c35fe950f4e3be69443}{get\+\_\+nsi\+\_\+data}} (self)
 \item 
-list\mbox{[}\mbox{\hyperlink{classrepository_1_1model_1_1_n_s_i_data}{NSIData}}\mbox{]} \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_ac7378b677df27291cf11e3d36e670d0b}{get\+\_\+nsi\+\_\+data\+\_\+view}} (self, int d\+\_\+type, int limit=10)
+list\mbox{[}NSIData\mbox{]} \mbox{\hyperlink{classrepository_1_1repository_1_1_repository_ac7378b677df27291cf11e3d36e670d0b}{get\+\_\+nsi\+\_\+data\+\_\+view}} (self, int d\+\_\+type, int limit=10)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -48,7 +48,9 @@ session: Session - connection to the database
 
 \begin{DoxyVerb}Constructor for Repository class.
 Creates a connection to the database.
-We use Depends to get the session from the get_session function.\end{DoxyVerb}
+
+session: Session - connection to the database
+\end{DoxyVerb}
  
 
 \doxysubsection{Member Function Documentation}
@@ -78,7 +80,7 @@ data: dict - dictionary with data\end{DoxyVerb}
 \index{repository.repository.Repository@{repository.repository.Repository}!add\_request\_logs@{add\_request\_logs}}
 \index{add\_request\_logs@{add\_request\_logs}!repository.repository.Repository@{repository.repository.Repository}}
 \doxysubsubsection{\texorpdfstring{add\_request\_logs()}{add\_request\_logs()}}
-{\footnotesize\ttfamily  None repository.\+repository.\+Repository.\+add\+\_\+request\+\_\+logs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classrepository_1_1model_1_1_request_logs}{Request\+Logs}}}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  None repository.\+repository.\+Repository.\+add\+\_\+request\+\_\+logs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Request\+Logs}]{data }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Adds request logs to the database.
 
@@ -106,7 +108,7 @@ list[NSIData] - list of NSIData instances\end{DoxyVerb}
 \index{repository.repository.Repository@{repository.repository.Repository}!get\_nsi\_data\_view@{get\_nsi\_data\_view}}
 \index{get\_nsi\_data\_view@{get\_nsi\_data\_view}!repository.repository.Repository@{repository.repository.Repository}}
 \doxysubsubsection{\texorpdfstring{get\_nsi\_data\_view()}{get\_nsi\_data\_view()}}
-{\footnotesize\ttfamily  list\mbox{[}\mbox{\hyperlink{classrepository_1_1model_1_1_n_s_i_data}{NSIData}}\mbox{]} repository.\+repository.\+Repository.\+get\+\_\+nsi\+\_\+data\+\_\+view (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{d\+\_\+type,  }\item[{int }]{limit = {\ttfamily 10} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily  list\mbox{[}NSIData\mbox{]} repository.\+repository.\+Repository.\+get\+\_\+nsi\+\_\+data\+\_\+view (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int}]{d\+\_\+type,  }\item[{int }]{limit = {\ttfamily 10} }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Gets NSI data from the database by type.
 Uses limit to get a limited amount of data.

@@ -1,0 +1,125 @@
+from pydantic import BaseModel
+from starlette.responses import JSONResponse
+
+
+## @brief     Request model for load_nsi method
+#
+#
+#
+# @b Examples
+# @code
+#    {
+#        "download_link": "https://www.example.com/data.txt",
+#        "data_type": 1
+#    }
+# @endcode
+#
+
+class LoadNSIRequest(BaseModel):
+
+    ## @property		download_link
+    # str - link to the file
+
+    ## @property		data_type
+    # int - type of the data
+    download_link: str
+    data_type: int
+
+
+## @brief     Default response model
+#
+#
+#
+# @b Examples
+# @code
+#    {
+#        "success": true,
+#        "description": "Data loaded"
+#    }
+# @endcode
+#
+
+class DefaultResponse(BaseModel):
+
+    ## @property		success
+    # bool
+
+    ## @property		description
+    # str
+    success: bool
+    description: str
+
+
+## @brief     Request model for get_nsi method
+#
+#
+#
+# @b Examples
+# @code
+#    {
+#        "data_type": 1,
+#        "limit": 10
+#    }
+# @endcode
+#
+
+class GetNSIRequest(BaseModel):
+
+    ## @property		data_type
+    # int
+
+    ## @property		limit
+    # int
+    data_type: int
+    limit: int
+
+
+## @brief     Response model for get_nsi method
+#
+#
+#
+# @b Examples
+# @code
+# @endcode
+#    {
+#        "success": true,
+#        "description": "Data loaded"
+#        "data": [
+# @code
+#            {
+#                "id": 1,
+#                "value1": "val",
+#                "value2": 30
+#            },
+#            {
+#                "id": 2,
+#                "value1": "val",
+#                "age": 25
+#            }
+# @endcode
+#        ]
+#    }
+#
+
+class GetNSIResponse(BaseModel):
+
+    ## @property		success
+    # bool
+
+    ## @property		description
+    # str
+
+    ## @property		data
+    # list
+    success: bool
+    description: str
+    data: list
+
+
+NSI_BAD_REQUEST = JSONResponse(
+                content=DefaultResponse(
+                    success=False,
+                    description="Invalid data type"
+                ).dict(),
+                status_code=400,
+            )

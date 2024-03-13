@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadnsirequest_0',['LoadNSIRequest',['../classdto_1_1model_1_1_load_n_s_i_request.html',1,'dto::model']]]
+  ['infoparser_0',['InfoParser',['../classparser_1_1parser_1_1_info_parser.html',1,'parser::parser']]]
 ];

@@ -1,0 +1,118 @@
+\doxysection{service.\+application\+\_\+graph.\+Application\+Graph\+Service Class Reference}
+\hypertarget{classservice_1_1application__graph_1_1_application_graph_service}{}\label{classservice_1_1application__graph_1_1_application_graph_service}\index{service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}}
+Inheritance diagram for service.\+application\+\_\+graph.\+Application\+Graph\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classservice_1_1application__graph_1_1_application_graph_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classservice_1_1application__graph_1_1_application_graph_service_af1add5503ccfe7d9bcb0a0a534506e00}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+JSONResponse \mbox{\hyperlink{classservice_1_1application__graph_1_1_application_graph_service_aaa6cb84069d9f7863c1800840a812a28}{ant\+\_\+colony}} (self, Get\+Short\+Path\+Request req)
+\item 
+JSONResponse \mbox{\hyperlink{classservice_1_1application__graph_1_1_application_graph_service_aebbdb17224613fb7b2c5040b7bd63482}{dijkstra}} (self, Get\+Short\+Path\+Request req)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classservice_1_1application__graph_1_1_application_graph_service_af1add5503ccfe7d9bcb0a0a534506e00}\label{classservice_1_1application__graph_1_1_application_graph_service_af1add5503ccfe7d9bcb0a0a534506e00} 
+\index{service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily service.\+application\+\_\+graph.\+Application\+Graph\+Service.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor for ApplicationGraphService class.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classservice_1_1application__graph_1_1_application_graph_service_aaa6cb84069d9f7863c1800840a812a28}\label{classservice_1_1application__graph_1_1_application_graph_service_aaa6cb84069d9f7863c1800840a812a28} 
+\index{service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}!ant\_colony@{ant\_colony}}
+\index{ant\_colony@{ant\_colony}!service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}}
+\doxysubsubsection{\texorpdfstring{ant\_colony()}{ant\_colony()}}
+{\footnotesize\ttfamily  JSONResponse service.\+application\+\_\+graph.\+Application\+Graph\+Service.\+ant\+\_\+colony (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Get\+Short\+Path\+Request}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Ant colony algorithm for finding the shortest path and cost in a graph.
+
+Args:
+req: GetShortPathRequest - request object
+
+Example:
+    {
+        "start_node": 0,
+        "end_node": 9,
+        "size": 10,
+        "flatten_matrix": [0.74788737, 0.28540867, 0.99959624, 0.10110528, 0.3926201,  0.40042853, 0.635031, 0.56465142, 0.72817825, 0.19600194, 0.39843629, 0.87502986, 0.22554879, 0.18716884, 0.70307813, 0.4830509, 0.25361671, 0.6572518, 0.36114295, 0.440903]
+    }
+
+Returns:
+JSONResponse - response object
+
+Examples:
+    Success 200:
+    {
+        "shortest_path": [1, 2, 3, 4],
+        "cost": 10.0,
+        "success": true,
+        "description": "ok"
+    }
+    Failure 400:
+    {
+        "success": false,
+        "description": "Matrix size does not match the specified size"
+    }
+    Failure 500:
+    {
+        "success": false,
+        "description": "Internal server error"
+    }
+\end{DoxyVerb}
+ \Hypertarget{classservice_1_1application__graph_1_1_application_graph_service_aebbdb17224613fb7b2c5040b7bd63482}\label{classservice_1_1application__graph_1_1_application_graph_service_aebbdb17224613fb7b2c5040b7bd63482} 
+\index{service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!service.application\_graph.ApplicationGraphService@{service.application\_graph.ApplicationGraphService}}
+\doxysubsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily  JSONResponse service.\+application\+\_\+graph.\+Application\+Graph\+Service.\+dijkstra (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Get\+Short\+Path\+Request}]{req }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Dijkstra algorithm for finding the shortest path and cost in a graph.
+
+Args:
+req: GetShortPathRequest - request object
+
+Example:
+    {
+        "start_node": 0,
+        "end_node": 9,
+        "size": 10,
+        "flatten_matrix": [0.74788737, 0.28540867, 0.99959624, 0.10110528, 0.3926201,  0.40042853, 0.635031, 0.56465142, 0.72817825, 0.19600194, 0.39843629, 0.87502986, 0.22554879, 0.18716884, 0.70307813, 0.4830509, 0.25361671, 0.6572518, 0.36114295, 0.440903]
+    }
+
+Returns:
+JSONResponse - response object
+
+Examples:
+    Success 200:
+    {
+        "shortest_path": [1, 2, 3, 4],
+        "cost": 10.0,
+        "success": true,
+        "description": "ok"
+    }
+    Failure 400:
+    {
+        "success": false,
+        "description": "Matrix size does not match the specified size"
+    }
+    Failure 500:
+    {
+        "success": false,
+        "description": "Internal server error"
+    }
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+internal/service/application\+\_\+graph.\+py\end{DoxyCompactItemize}

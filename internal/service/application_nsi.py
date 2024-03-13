@@ -13,6 +13,12 @@ class ApplicationNSIService(object):
     def __init__(
             self,
     ):
+        """
+        ApplicationNSIService constructor
+
+        repository: Repository - repository object
+        parser: InfoParser - parser object
+        """
         self.repository = Repository()
         self.parser = InfoParser()
 
@@ -24,8 +30,31 @@ class ApplicationNSIService(object):
         Args:
         req: LoadNSIRequest - request object
 
+        Example:
+            {
+                "download_link": "https://www.example.com/data.txt",
+                "data_type": 1
+            }
+
         Returns:
         JSONResponse - response object
+
+        Examples:
+            Success 200:
+            {
+                "success": true,
+                "description": "Data loaded"
+            }
+            Failure 400:
+            {
+                "success": false,
+                "description": "Download link is empty"
+            }
+            Failure 500:
+            {
+                "success": false,
+                "description": "Internal server error"
+            }
         """
         try:
             if not validate_dtype(req.data_type):
@@ -58,8 +87,38 @@ class ApplicationNSIService(object):
         Args:
         req: GetNSIRequest - request object
 
+        Example:
+            {
+                "data_type": 1,
+                "limit": 10
+            }
+
         Returns:
         JSONResponse - response object
+
+        Examples:
+            Success 200:
+            {
+                "data": [
+                    {
+                        "id": 1,
+                        "value1": val,
+                        "value2": val,
+                    }
+                ],
+                "success": true,
+                "description": "Data loaded"
+            }
+            Failure 400:
+            {
+                "success": false,
+                "description": "Data type is not valid"
+            }
+            Failure 500:
+            {
+                "success": false,
+                "description": "Internal server error"
+            }
         """
         try:
             if not validate_dtype(req.data_type):

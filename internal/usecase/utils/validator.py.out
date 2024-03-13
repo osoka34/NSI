@@ -1,5 +1,6 @@
 import internal.usecase.parser.s_constant
 import uuid
+from internal.dto import GetShortPathRequest
 
 
 ###    Validates the data type.
@@ -26,5 +27,17 @@ def validate_dtype(d_type: int) -> bool:
 
 def generate_uuid():
     return str(uuid.uuid4())
+
+
+
+###    Validates the size of the matrix.
+#    Checks if the size of the matrix is valid.
+#
+#
+# @param		req	GetShortPathRequest - request object
+#
+
+def validate_size(req: GetShortPathRequest) -> bool:
+    return req.size * 2 == len(req.flatten_matrix)
 
 
