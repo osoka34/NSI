@@ -2,7 +2,6 @@ from internal.dto import GetShortPathRequest, GRAPH_BAD_REQUEST
 from starlette.responses import JSONResponse
 from internal.usecase.graph_algo import short_path
 from internal.usecase.utils import to_matrix
-from internal.usecase.graph_algo.ant_colony_all_points import ACO_TSP
 from internal.usecase.graph_algo.ant_colony import calculate_path_and_cost
 from internal.service import HTTP_200_OK, INTERNAL_ERROR
 from internal.usecase.utils import validate_size

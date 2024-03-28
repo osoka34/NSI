@@ -13,12 +13,12 @@ services:
     volumes:
       - ./migrations/init_postgres.sql:/docker-entrypoint-initdb.d/init_postgres.sql
 
-#  app:
-#    container_name: my_app
-#    build:
-#      dockerfile: Dockerfile
-#    ports:
-#      - "11000:11000"
-##      - "12000:12000"
-#    depends_on:
-#      - postgres
+  app:
+    container_name: my_app
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "11000:11000"
+#      - "12000:12000"
+    depends_on:
+      - postgres

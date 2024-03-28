@@ -4,10 +4,10 @@ CONFIG = {
         'database': 'postgres',
         'user': 'postgres',
         'password': 'postgres',
-        # 'host': 'my_postgres_container',
-        'host': 'localhost',
-        # 'port': '5432'
-        'port': '12000'
+        'host': 'my_postgres_container',
+        # 'host': 'localhost',
+        'port': '5432'
+        # 'port': '12000'
     }
 }
 
