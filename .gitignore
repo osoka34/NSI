@@ -3,4 +3,4 @@
 __pycache__
 .gitignore
 .test_main.py
-Makefile
+doc.txt
