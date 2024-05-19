@@ -4,7 +4,7 @@ CONFIG = {
         'database': 'postgres',
         'user': 'postgres',
         'password': 'postgres',
-        'host': 'my_postgres_container',
+        'host': 'postgres_container',
         # 'host': '0.0.0.0',
         'port': '5432'
         # 'port': '12000'
