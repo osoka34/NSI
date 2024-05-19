@@ -1,9 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import OAuth2PasswordBearer
 
 from internal.controller.http.router import api_router
 from internal.controller.http.v1 import middleware
-
 
 def create_app() -> FastAPI:
     """

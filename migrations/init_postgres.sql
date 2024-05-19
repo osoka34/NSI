@@ -1,3 +1,13 @@
+CREATE TABLE users_table (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    hashed_password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    disable BOOLEAN DEFAULT FALSE
+);
+
+
+
 CREATE TABLE data_type (
     id SERIAL PRIMARY KEY,
     source VARCHAR(100) DEFAULT '',

@@ -10,4 +10,5 @@ from internal.service.s_constant import (
 
 from .application_nsi import ApplicationNSIService
 from .application_graph import ApplicationGraphService
+from .application_user import ApplicationUserService
 
