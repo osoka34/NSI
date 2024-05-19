@@ -5,7 +5,7 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from starlette.responses import JSONResponse
 
 from internal.dto import UserDto, Token
-from internal.dto.model_auth import CREATE_USER_EXAMPLE, UPDATE_USER_EXAMPLE
+from internal.dto.model_auth import CREATE_USER_EXAMPLE, UPDATE_USER_EXAMPLE, DELETE_USER_EXAMPLE
 from internal.service import ApplicationUserService
 
 router = APIRouter()
@@ -14,7 +14,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="v1/user/token")
 
 @router.post('/create_user')
 async def create_user(
-        dto: UserDto = Body(..., examples=CREATE_USER_EXAMPLE),
+        dto: UserDto = Body(..., examples=CREATE_USER_EXAMPLE, openapi_examples=CREATE_USER_EXAMPLE),
         application_service: ApplicationUserService = Depends(),
 ) -> UserDto:
     """
@@ -58,7 +58,7 @@ async def get_token(
 
 @router.post('/update_user', dependencies=[Depends(get_user_by_token)])
 async def update_user(
-        dto: UserDto = Body(..., example=UPDATE_USER_EXAMPLE),
+        dto: UserDto = Body(..., examples=UPDATE_USER_EXAMPLE, openapi_examples=UPDATE_USER_EXAMPLE),
         application_service: ApplicationUserService = Depends(),
 ) -> UserDto:
     """
@@ -73,7 +73,7 @@ async def update_user(
 
 @router.post('/delete_user', dependencies=[Depends(get_user_by_token)])
 async def delete_user(
-        dto: UserDto,
+        dto: UserDto = Body(..., examples=DELETE_USER_EXAMPLE, openapi_examples=DELETE_USER_EXAMPLE),
         application_service: ApplicationUserService = Depends(),
 ) -> UserDto:
     """

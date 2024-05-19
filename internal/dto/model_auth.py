@@ -17,18 +17,24 @@ class UserDto(BaseModel):
     disabled: bool | None = None
 
 
-CREATE_USER_EXAMPLE = {
+CREATE_USER_EXAMPLE = [
+    {
         "username": "test",
         "email": "test@mail.com",
         "password": "test",
         "disabled": False,
+    },
+]
+
+UPDATE_USER_EXAMPLE = [
+    {
+        "username": "test",
+        "email": "new@mail.com",
+    },
+]
+
+DELETE_USER_EXAMPLE = [
+    {
+        "username": "test",
     }
-
-UPDATE_USER_EXAMPLE = {
-    "username": "test",
-    "email": "new@mail.com",
-}
-
-DELETE_USER_EXAMPLE = {
-    "username": "test",
-}
+]

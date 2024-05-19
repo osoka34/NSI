@@ -14,7 +14,7 @@ services:
       - ./migrations/init_postgres.sql:/docker-entrypoint-initdb.d/init_postgres.sql
 
   app:
-    network_mode: host
+#    network_mode: host
     container_name: nsi
     build:
       dockerfile: Dockerfile
