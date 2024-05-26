@@ -1,0 +1,2 @@
+from internal.entity.named_constants_repository.repository import NamesConstantsRepository
+from internal.entity.named_constants_repository.model import NamesConstants

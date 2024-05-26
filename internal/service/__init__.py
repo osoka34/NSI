@@ -11,4 +11,9 @@ from internal.service.s_constant import (
 from .application_nsi import ApplicationNSIService
 from .application_graph import ApplicationGraphService
 from .application_user import ApplicationUserService
+from .application_cloud_stations import ApplicationCloudStationService
+from .application_cloudlines import ApplicationCloudlinesService
+from .application_named_const import ApplicationNamedConstService
+from .application_telescope_system import ApplicationTelescopeSystemService
+from .application_ground_points import ApplicationGroundPointsService
 
