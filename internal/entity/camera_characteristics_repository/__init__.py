@@ -1,0 +1,2 @@
+from internal.entity.camera_characteristics_repository.repository import TelescopeSystemRepository
+from internal.entity.camera_characteristics_repository.model import TelescopeSystem
