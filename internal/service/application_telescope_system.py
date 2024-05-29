@@ -15,33 +15,33 @@ class ApplicationTelescopeSystemService(object):
     ):
         self.repository = TelescopeSystemRepository()
 
-    def get_telescope_system_by_id(self, in_id: int) -> JSONResponse:
+    def get_telescope_system_by_id(self, in_id: int) -> JSONResponse | TelescopeSystemDto:
         try:
             telescope_system = self.repository.get_telescope_system_by_id(in_id)
             if not telescope_system:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Telescope system not found"})
             telescope_system_dto = telescope_system_from_repo_to_dto(telescope_system)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=telescope_system_dto)
+            return telescope_system_dto
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> get_telescope_system_by_id: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
-    def get_all_telescope_system(self) -> JSONResponse:
+    def get_all_telescope_system(self) -> JSONResponse | Any:
         try:
             telescope_system = self.repository.get_all_telescope_systems()
             if not telescope_system:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Telescope system not found"})
             telescope_system_dto = telescope_system_from_repo_to_dto_list(telescope_system)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=telescope_system_dto)
+            return {"data": telescope_system_dto}
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> get_all_telescope_system: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -49,11 +49,11 @@ class ApplicationTelescopeSystemService(object):
         try:
             telescope_system_repo = telescope_system_from_dto_to_repo(telescope_system)
             self.repository.add_telescope_system(telescope_system_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=telescope_system)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> add_telescope_system: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -61,11 +61,11 @@ class ApplicationTelescopeSystemService(object):
         try:
             telescope_system_repo = telescope_system_from_dto_to_repo(telescope_system)
             self.repository.update_telescope_system(telescope_system_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=telescope_system)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> update_telescope_system: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -76,6 +76,6 @@ class ApplicationTelescopeSystemService(object):
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> delete_telescope_system: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )

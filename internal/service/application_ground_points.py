@@ -14,33 +14,33 @@ class ApplicationGroundPointsService(object):
     ):
         self.repository = GroundPointsRepository()
 
-    def get_ground_points_by_id(self, in_id: int) -> JSONResponse:
+    def get_ground_points_by_id(self, in_id: int) -> JSONResponse | GroundPointsDto:
         try:
             ground_points = self.repository.get_ground_points_by_id(in_id)
             if not ground_points:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Ground point not found"})
             ground_points_dto = ground_p_from_repo_to_dto(ground_points)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=ground_points_dto)
+            return ground_points_dto
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> get_ground_points_by_id: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
-    def get_all_ground_points(self) -> JSONResponse:
+    def get_all_ground_points(self) -> JSONResponse | Any:
         try:
             ground_points = self.repository.get_all_ground_points()
             if not ground_points:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Ground points not found"})
             ground_points_dto = ground_p_from_repo_to_dto_list(ground_points)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=ground_points_dto)
+            return {"data": ground_points_dto}
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> get_all_ground_points: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -48,11 +48,11 @@ class ApplicationGroundPointsService(object):
         try:
             ground_points_repo = ground_p_from_dto_to_repo(ground_points)
             self.repository.add_ground_points(ground_points_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=ground_points)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> add_ground_points: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -60,11 +60,11 @@ class ApplicationGroundPointsService(object):
         try:
             ground_points_repo = ground_p_from_dto_to_repo(ground_points)
             self.repository.update_ground_points(ground_points_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=ground_points)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> update_ground_points: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -75,7 +75,7 @@ class ApplicationGroundPointsService(object):
         except Exception as e:
             print(f"ERROR ::: ApplicationGroundPoints -> delete_ground_points: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
