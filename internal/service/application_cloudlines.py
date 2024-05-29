@@ -1,3 +1,5 @@
+from typing import Any
+
 from starlette.responses import JSONResponse
 
 from internal.entity.cloudlines_repository import CloudlinesRepository, Cloudlines
@@ -13,33 +15,33 @@ class ApplicationCloudlinesService(object):
     ):
         self.repository = CloudlinesRepository()
 
-    def get_cloudlines_by_id(self, in_id: int) -> JSONResponse:
+    def get_cloudlines_by_id(self, in_id: int) -> JSONResponse | CloudlinesDto:
         try:
             cloudlines = self.repository.get_cloudlines_by_id(in_id)
             if not cloudlines:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Cloudline not found"})
             cloudlines_dto = cloudlines_from_repo_to_dto(cloudlines)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=cloudlines_dto)
+            return cloudlines_dto
         except Exception as e:
             print(f"ERROR ::: ApplicationCloudlines -> get_cloudlines_by_id: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
-    def get_all_cloudlines(self) -> JSONResponse:
+    def get_all_cloudlines(self) -> JSONResponse | Any:
         try:
             cloudlines = self.repository.get_all_cloudlines()
             if not cloudlines:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                                     content={"success": False, "description": "Cloudlines not found"})
             cloudlines_dto = cloudlines_from_repo_to_dto_list(cloudlines)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=cloudlines_dto)
+            return {"data": cloudlines_dto}
         except Exception as e:
             print(f"ERROR ::: ApplicationCloudlines -> get_all_cloudlines: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -47,11 +49,11 @@ class ApplicationCloudlinesService(object):
         try:
             cloudlines_repo = cloudlines_from_dto_to_repo(cloudlines)
             self.repository.add_cloudlines(cloudlines_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=cloudlines)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationCloudlines -> add_cloudlines: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -59,11 +61,11 @@ class ApplicationCloudlinesService(object):
         try:
             cloudlines_repo = cloudlines_from_dto_to_repo(cloudlines)
             self.repository.update_cloudlines(cloudlines_repo)
-            return JSONResponse(status_code=status.HTTP_200_OK, content=cloudlines)
+            return JSONResponse(status_code=status.HTTP_200_OK, content={"success": True})
         except Exception as e:
             print(f"ERROR ::: ApplicationCloudlines -> update_cloudlines: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )
 
@@ -74,6 +76,6 @@ class ApplicationCloudlinesService(object):
         except Exception as e:
             print(f"ERROR ::: ApplicationCloudlines -> delete_cloudlines: {e}")
             raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_ERROR,
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Internal server error",
             )

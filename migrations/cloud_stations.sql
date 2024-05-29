@@ -162,7 +162,6 @@ INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25173, 'Мыс Шмидта', '68°54′', '-179°38′', 2, 1966, 'Законсервирована  с 01.09.2013г.');
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25206, 'Среднеколымск', '67°27′', '153°43′', 20, 1966, '');
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25248, 'Илирней', '67°15′', '167°58′', 352, 1966, 'С 07.10.2015г. наблюдения прекращены, нет штата.');
-INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (nan, nan, nan, nan, nan, nan, '');
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25282, 'Мыс Ванкарем', '67°50′', '-175°50′', 3, 1966, '');
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25325, 'Усть-Олой', '66°33′', '159°25′', 127, 1966, 'С 19.08.2013г. временно законсервирована');
 INSERT INTO cloud_stations (index_vmo, station_name, latitude, longitude, height_homeopost, collect_from, note) VALUES (25356, 'Эньмувеем', '66°23′', '173°20′', 78, 1966, '');
