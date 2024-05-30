@@ -5,21 +5,21 @@ from internal.dto import CloudlinesDto
 def cloudlines_from_repo_to_dto(cloudlines: Cloudlines) -> CloudlinesDto:
     return CloudlinesDto(
         id=cloudlines.id,
-        Synoptic_index_of_thу_station=cloudlines.Synoptic_index_of_thу_station,
-        Year=cloudlines.Year,
-        Type_of_cloudiness=cloudlines.Type_of_cloudiness,
-        Average_cloudiness_in_January=cloudlines.Average_cloudiness_in_January,
-        Average_cloudiness_in_February=cloudlines.Average_cloudiness_in_February,
-        Average_cloudiness_in_March=cloudlines.Average_cloudiness_in_March,
-        Average_cloudiness_in_April=cloudlines.Average_cloudiness_in_April,
-        Average_cloudiness_in_May=cloudlines.Average_cloudiness_in_May,
-        Average_cloudiness_in_June=cloudlines.Average_cloudiness_in_June,
-        Average_cloudiness_in_July=cloudlines.Average_cloudiness_in_July,
-        Average_cloudiness_in_August=cloudlines.Average_cloudiness_in_August,
-        Average_cloudiness_in_September=cloudlines.Average_cloudiness_in_September,
-        Average_cloudiness_in_October=cloudlines.Average_cloudiness_in_October,
-        Average_cloudiness_in_November=cloudlines.Average_cloudiness_in_November,
-        Average_cloudiness_in_December=cloudlines.Average_cloudiness_in_December
+        synoptic_index_of_the_station=cloudlines.synoptic_index_of_the_station,
+        year=cloudlines.year,
+        type_of_cloudiness=cloudlines.type_of_cloudiness,
+        average_cloudiness_in_january=cloudlines.average_cloudiness_in_january,
+        average_cloudiness_in_february=cloudlines.average_cloudiness_in_february,
+        average_cloudiness_in_march=cloudlines.average_cloudiness_in_march,
+        average_cloudiness_in_april=cloudlines.average_cloudiness_in_april,
+        average_cloudiness_in_may=cloudlines.average_cloudiness_in_may,
+        average_cloudiness_in_june=cloudlines.average_cloudiness_in_june,
+        average_cloudiness_in_july=cloudlines.average_cloudiness_in_july,
+        average_cloudiness_in_august=cloudlines.average_cloudiness_in_august,
+        average_cloudiness_in_september=cloudlines.average_cloudiness_in_september,
+        average_cloudiness_in_october=cloudlines.average_cloudiness_in_october,
+        average_cloudiness_in_november=cloudlines.average_cloudiness_in_november,
+        average_cloudiness_in_december=cloudlines.average_cloudiness_in_december
     )
 
 
@@ -28,21 +28,21 @@ def cloudlines_from_repo_to_dto_list(params: list[Cloudlines]) -> list[Cloudline
     for c in params:
         l.append(CloudlinesDto(
             id=c.id,
-            Synoptic_index_of_thу_station=c.Synoptic_index_of_thу_station,
-            Year=c.Year,
-            Type_of_cloudiness=c.Type_of_cloudiness,
-            Average_cloudiness_in_January=c.Average_cloudiness_in_January,
-            Average_cloudiness_in_February=c.Average_cloudiness_in_February,
-            Average_cloudiness_in_March=c.Average_cloudiness_in_March,
-            Average_cloudiness_in_April=c.Average_cloudiness_in_April,
-            Average_cloudiness_in_May=c.Average_cloudiness_in_May,
-            Average_cloudiness_in_June=c.Average_cloudiness_in_June,
-            Average_cloudiness_in_July=c.Average_cloudiness_in_July,
-            Average_cloudiness_in_August=c.Average_cloudiness_in_August,
-            Average_cloudiness_in_September=c.Average_cloudiness_in_September,
-            Average_cloudiness_in_October=c.Average_cloudiness_in_October,
-            Average_cloudiness_in_November=c.Average_cloudiness_in_November,
-            Average_cloudiness_in_December=c.Average_cloudiness_in_December
+            synoptic_index_of_the_station=c.synoptic_index_of_the_station,
+            year=c.year,
+            type_of_cloudiness=c.type_of_cloudiness,
+            average_cloudiness_in_january=c.average_cloudiness_in_january,
+            average_cloudiness_in_february=c.average_cloudiness_in_february,
+            average_cloudiness_in_march=c.average_cloudiness_in_march,
+            average_cloudiness_in_april=c.average_cloudiness_in_april,
+            average_cloudiness_in_may=c.average_cloudiness_in_may,
+            average_cloudiness_in_june=c.average_cloudiness_in_june,
+            average_cloudiness_in_july=c.average_cloudiness_in_july,
+            average_cloudiness_in_august=c.average_cloudiness_in_august,
+            average_cloudiness_in_september=c.average_cloudiness_in_september,
+            average_cloudiness_in_october=c.average_cloudiness_in_october,
+            average_cloudiness_in_november=c.average_cloudiness_in_november,
+            average_cloudiness_in_december=c.average_cloudiness_in_december
         ))
     return l
 
@@ -50,19 +50,19 @@ def cloudlines_from_repo_to_dto_list(params: list[Cloudlines]) -> list[Cloudline
 def cloudlines_from_dto_to_repo(cloudlines: CloudlinesDto) -> Cloudlines:
     return Cloudlines(
         id=cloudlines.id,
-        Synoptic_index_of_thу_station=cloudlines.Synoptic_index_of_thу_station,
-        Year=cloudlines.Year,
-        Type_of_cloudiness=cloudlines.Type_of_cloudiness,
-        Average_cloudiness_in_January=cloudlines.Average_cloudiness_in_January,
-        Average_cloudiness_in_February=cloudlines.Average_cloudiness_in_February,
-        Average_cloudiness_in_March=cloudlines.Average_cloudiness_in_March,
-        Average_cloudiness_in_April=cloudlines.Average_cloudiness_in_April,
-        Average_cloudiness_in_May=cloudlines.Average_cloudiness_in_May,
-        Average_cloudiness_in_June=cloudlines.Average_cloudiness_in_June,
-        Average_cloudiness_in_July=cloudlines.Average_cloudiness_in_July,
-        Average_cloudiness_in_August=cloudlines.Average_cloudiness_in_August,
-        Average_cloudiness_in_September=cloudlines.Average_cloudiness_in_September,
-        Average_cloudiness_in_October=cloudlines.Average_cloudiness_in_October,
-        Average_cloudiness_in_November=cloudlines.Average_cloudiness_in_November,
-        Average_cloudiness_in_December=cloudlines.Average_cloudiness_in_December
+        synoptic_index_of_the_station=cloudlines.synoptic_index_of_the_station,
+        year=cloudlines.year,
+        type_of_cloudiness=cloudlines.type_of_cloudiness,
+        average_cloudiness_in_january=cloudlines.average_cloudiness_in_january,
+        average_cloudiness_in_february=cloudlines.average_cloudiness_in_february,
+        average_cloudiness_in_march=cloudlines.average_cloudiness_in_march,
+        average_cloudiness_in_april=cloudlines.average_cloudiness_in_april,
+        average_cloudiness_in_may=cloudlines.average_cloudiness_in_may,
+        average_cloudiness_in_june=cloudlines.average_cloudiness_in_june,
+        average_cloudiness_in_july=cloudlines.average_cloudiness_in_july,
+        average_cloudiness_in_august=cloudlines.average_cloudiness_in_august,
+        average_cloudiness_in_september=cloudlines.average_cloudiness_in_september,
+        average_cloudiness_in_october=cloudlines.average_cloudiness_in_october,
+        average_cloudiness_in_november=cloudlines.average_cloudiness_in_november,
+        average_cloudiness_in_december=cloudlines.average_cloudiness_in_december
     )

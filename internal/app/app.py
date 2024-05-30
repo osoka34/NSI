@@ -22,7 +22,7 @@ def create_app() -> FastAPI:
         allow_headers=['*'],
     )
 
-    app.middleware("http")(middleware.log_requests)
+    # app.middleware("http")(middleware.log_requests)
 
     app.include_router(api_router)
     return app

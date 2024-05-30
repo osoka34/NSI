@@ -24,6 +24,21 @@ class CloudStation(Base):
     collect_from = Column(Integer, default=0)
     note = Column(String(255), default='')
 
+    def to_dict(self):
+        """
+        Converts the attributes of the CloudStation instance into a dictionary.
+        """
+        return {
+            'id': self.id,
+            'index_vmo': self.index_vmo,
+            'station_name': self.station_name,
+            'latitude': self.latitude,
+            'longitude': self.longitude,
+            'height_homeopost': self.height_homeopost,
+            'collect_from': self.collect_from,
+            'note': self.note
+        }
+
 
 
 

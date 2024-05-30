@@ -13,12 +13,12 @@ CREATE TABLE telescope_system (
     target_internal_state NUMERIC[],
     sigma_state_noise NUMERIC,
     constant_system_params VARCHAR(50),
-    J1 NUMERIC,
-    J2 NUMERIC,
-    J3 NUMERIC,
-    J4 NUMERIC,
-    Kg NUMERIC,
-    Fs NUMERIC,
+    j1_param NUMERIC,
+    j2_param NUMERIC,
+    j3_param NUMERIC,
+    j4_param NUMERIC,
+    kg NUMERIC,
+    fs NUMERIC,
     pid_coefs1 NUMERIC[],
     pid_coefs2 NUMERIC[],
     control_vector NUMERIC[],
@@ -31,8 +31,8 @@ CREATE TABLE telescope_system (
     params_fsm VARCHAR(50),
     control_vector_fsm NUMERIC[],
     omega01 NUMERIC[],
-    Q1 NUMERIC[],
-    Q2 NUMERIC[],
+    q1_param NUMERIC[],
+    q2_param NUMERIC[],
     pid_coefs1_fsm NUMERIC[],
     pid_coefs2_fsm NUMERIC[],
     linear_angle_detector VARCHAR(50),
@@ -49,8 +49,8 @@ CREATE TABLE telescope_system (
 INSERT INTO telescope_system (
     telescope, aperture_params, diameter, effective_radiation_waist_factor, magnification_system, magnification,
     inversion, gimbal, system_state, x_vector, target_internal_state, sigma_state_noise, constant_system_params,
-    J1, J2, J3, J4, Kg, Fs, pid_coefs1, pid_coefs2, control_vector, real_fsm, state_fsm, x_vector_fsm,
-    target_internal_state_fsm, sigma_fsm, state_limits, params_fsm, control_vector_fsm, omega01, Q1, Q2,
+    j1_param, j2_param, j3_param, j4_param, kg, fs, pid_coefs1, pid_coefs2, control_vector, real_fsm, state_fsm, x_vector_fsm,
+    target_internal_state_fsm, sigma_fsm, state_limits, params_fsm, control_vector_fsm, omega01, q1_param, q2_param,
     pid_coefs1_fsm, pid_coefs2_fsm, linear_angle_detector, ideal_lens, distance_to_photodetector, matrix_photodetector,
     pixel_size, resolution, responsivity, uniform_spot, radius
 ) VALUES (
@@ -62,3 +62,6 @@ INSERT INTO telescope_system (
     'LinearAngleDetector', 'IdealLens', 0.07, 'MatrixPhotodetector', ARRAY[20.16e-6, 20.16e-6], ARRAY[128.0, 128.0],
     1, 'UniformSpot', 0.00125
 );
+
+
+

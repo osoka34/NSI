@@ -416,7 +416,7 @@ function SearchResults() {
   // and that may or may not be possible.
   this.Search = function(search) {
     if (!search) { // get search word from URL
-      search = window.location.search;
+      search = window.location_param.search;
       search = search.substring(1);  // Remove the leading '?'
       search = unescape(search);
     }

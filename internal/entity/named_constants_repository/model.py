@@ -22,6 +22,19 @@ class NamesConstants(Base):
     name = Column(String(255), nullable=False, default='')
     dimension = Column(String(255), nullable=False, default='')
 
+    def to_dict(self):
+        """
+        Converts the attributes of the NamesConstants instance into a dictionary.
+        """
+        return {
+            'id': self.id,
+            'const_value': self.const_value,
+            'description': self.description,
+            'const_type': self.const_type,
+            'name': self.name,
+            'dimension': self.dimension
+        }
+
 # from internal.dto import NamedConstantsDto
 # nc = NamedConstantsDto(id=1, const_value="const_value", description="description", const_type="const_type", name="name", dimension="dimension")
 #

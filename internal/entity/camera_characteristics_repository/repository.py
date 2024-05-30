@@ -96,7 +96,7 @@ class TelescopeSystemRepository(object):
         data: TelescopeSystem
         """
         try:
-            self.session.query(TelescopeSystem).filter(TelescopeSystem.id == data.id).update(data)
+            self.session.query(TelescopeSystem).filter(TelescopeSystem.id == data.id).update(data.to_dict())
             self.session.commit()
         except Exception as e:
             print(f"Error occurred while updating data in the database: {e}")

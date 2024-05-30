@@ -97,7 +97,7 @@ class CloudStationRepository(object):
         data: CloudStation - data to update
         """
         try:
-            self.session.query(CloudStation).filter(CloudStation.id == data.id).update(data)
+            self.session.query(CloudStation).filter(CloudStation.id == data.id).update(data.to_dict())
             self.session.commit()
         except Exception as e:
             print(f"Error occurred while updating data in the database: {e}")

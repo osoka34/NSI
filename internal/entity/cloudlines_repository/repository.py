@@ -94,7 +94,7 @@ class CloudlinesRepository(object):
         data: Cloudlines
         """
         try:
-            self.session.query(Cloudlines).filter(Cloudlines.id == data.id).update(data)
+            self.session.query(Cloudlines).filter(Cloudlines.id == data.id).update(data.to_dict())
             self.session.commit()
         except Exception as e:
             print(f"Error occurred while updating data in the database: {e}")
