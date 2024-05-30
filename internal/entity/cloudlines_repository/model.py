@@ -9,21 +9,21 @@ CLOUDLINES = 'cloudlines'
 
 # CREATE table cloudlines (
 #     id serial primary key,
-#     Synoptic_index_of_thу_station integer not null default 0,
-#     Year integer not null default 0,
-#     Type_of_cloudiness integer not null default 0,
-#     Average_cloudiness_in_January varchar(40) not null default '',
-#     Average_cloudiness_in_February varchar(40) not null default '',
-#     Average_cloudiness_in_March varchar(40) not null default '',
-#     Average_cloudiness_in_April varchar(40) not null default '',
-#     Average_cloudiness_in_May varchar(40) not null default '',
-#     Average_cloudiness_in_June varchar(40) not null default '',
-#     Average_cloudiness_in_July varchar(40) not null default '',
-#     Average_cloudiness_in_August varchar(40) not null default '',
-#     Average_cloudiness_in_September varchar(40) not null default '',
-#     Average_cloudiness_in_October varchar(40) not null default '',
-#     Average_cloudiness_in_November varchar(40) not null default '',
-#     Average_cloudiness_in_December varchar(40) not null default ''
+#     synoptic_index_of_the_station integer not null default 0,
+#     year integer not null default 0,
+#     type_of_cloudiness integer not null default 0,
+#     average_cloudiness_in_january varchar(40) not null default '',
+#     average_cloudiness_in_february varchar(40) not null default '',
+#     average_cloudiness_in_march varchar(40) not null default '',
+#     average_cloudiness_in_april varchar(40) not null default '',
+#     average_cloudiness_in_may varchar(40) not null default '',
+#     average_cloudiness_in_june varchar(40) not null default '',
+#     average_cloudiness_in_july varchar(40) not null default '',
+#     average_cloudiness_in_august varchar(40) not null default '',
+#     average_cloudiness_in_september varchar(40) not null default '',
+#     average_cloudiness_in_october varchar(40) not null default '',
+#     average_cloudiness_in_november varchar(40) not null default '',
+#     average_cloudiness_in_december varchar(40) not null default ''
 # );
 
 
@@ -35,18 +35,37 @@ class Cloudlines(Base):
     __tablename__ = CLOUDLINES
 
     id = Column(Integer, primary_key=True)
-    Synoptic_index_of_thу_station = Column(Integer, nullable=False, default=0)
-    Year = Column(Integer, nullable=False, default=0)
-    Type_of_cloudiness = Column(Integer, nullable=False, default=0)
-    Average_cloudiness_in_January = Column(String(40), default='')
-    Average_cloudiness_in_February = Column(String(40), default='')
-    Average_cloudiness_in_March = Column(String(40), default='')
-    Average_cloudiness_in_April = Column(String(40), default='')
-    Average_cloudiness_in_May = Column(String(40), default='')
-    Average_cloudiness_in_June = Column(String(40), default='')
-    Average_cloudiness_in_July = Column(String(40), default='')
-    Average_cloudiness_in_August = Column(String(40), default='')
-    Average_cloudiness_in_September = Column(String(40), default='')
-    Average_cloudiness_in_October = Column(String(40), default='')
-    Average_cloudiness_in_November = Column(String(40), default='')
-    Average_cloudiness_in_December = Column(String(40), default='')
+    synoptic_index_of_the_station = Column(Integer, nullable=False, default=0)
+    year = Column(Integer, nullable=False, default=0)
+    type_of_cloudiness = Column(Integer, nullable=False, default=0)
+    average_cloudiness_in_january = Column(String(40), default='')
+    average_cloudiness_in_february = Column(String(40), default='')
+    average_cloudiness_in_march = Column(String(40), default='')
+    average_cloudiness_in_april = Column(String(40), default='')
+    average_cloudiness_in_may = Column(String(40), default='')
+    average_cloudiness_in_june = Column(String(40), default='')
+    average_cloudiness_in_july = Column(String(40), default='')
+    average_cloudiness_in_august = Column(String(40), default='')
+    average_cloudiness_in_september = Column(String(40), default='')
+    average_cloudiness_in_october = Column(String(40), default='')
+    average_cloudiness_in_november = Column(String(40), default='')
+    average_cloudiness_in_december = Column(String(40), default='')
+
+    def to_dict(self):
+        return {
+            'synoptic_index_of_the_station': self.synoptic_index_of_the_station,
+            'year': self.year,
+            'type_of_cloudiness': self.type_of_cloudiness,
+            'average_cloudiness_in_january': self.average_cloudiness_in_january,
+            'average_cloudiness_in_february': self.average_cloudiness_in_february,
+            'average_cloudiness_in_march': self.average_cloudiness_in_march,
+            'average_cloudiness_in_april': self.average_cloudiness_in_april,
+            'average_cloudiness_in_may': self.average_cloudiness_in_may,
+            'average_cloudiness_in_june': self.average_cloudiness_in_june,
+            'average_cloudiness_in_july': self.average_cloudiness_in_july,
+            'average_cloudiness_in_august': self.average_cloudiness_in_august,
+            'average_cloudiness_in_september': self.average_cloudiness_in_september,
+            'average_cloudiness_in_october': self.average_cloudiness_in_october,
+            'average_cloudiness_in_november': self.average_cloudiness_in_november,
+            'average_cloudiness_in_december': self.average_cloudiness_in_december,
+        }

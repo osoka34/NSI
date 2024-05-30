@@ -3,19 +3,19 @@ from pydantic import BaseModel
 
 class CloudlinesDto(BaseModel):
     id: int
-    Synoptic_index_of_thу_station: int
-    Year: int
-    Type_of_cloudiness: int
-    Average_cloudiness_in_January: str
-    Average_cloudiness_in_February: str
-    Average_cloudiness_in_March: str
-    Average_cloudiness_in_April: str
-    Average_cloudiness_in_May: str
-    Average_cloudiness_in_June: str
-    Average_cloudiness_in_July: str
-    Average_cloudiness_in_August: str
-    Average_cloudiness_in_September: str
-    Average_cloudiness_in_October: str
-    Average_cloudiness_in_November: str
-    Average_cloudiness_in_December: str
+    synoptic_index_of_the_station: int
+    year: int
+    type_of_cloudiness: int
+    average_cloudiness_in_january: str
+    average_cloudiness_in_february: str
+    average_cloudiness_in_march: str
+    average_cloudiness_in_april: str
+    average_cloudiness_in_may: str
+    average_cloudiness_in_june: str
+    average_cloudiness_in_july: str
+    average_cloudiness_in_august: str
+    average_cloudiness_in_september: str
+    average_cloudiness_in_october: str
+    average_cloudiness_in_november: str
+    average_cloudiness_in_december: str
 

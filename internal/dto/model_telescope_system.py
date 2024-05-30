@@ -16,12 +16,12 @@ class TelescopeSystemDto(BaseModel):
     target_internal_state: list
     sigma_state_noise: float
     constant_system_params: str
-    J1: float
-    J2: float
-    J3: float
-    J4: float
-    Kg: float
-    Fs: float
+    j1_param: float
+    j2_param: float
+    j3_param: float
+    j4_param: float
+    kg: float
+    fs: float
     pid_coefs1: list
     pid_coefs2: list
     control_vector: list
@@ -34,8 +34,8 @@ class TelescopeSystemDto(BaseModel):
     params_fsm: str
     control_vector_fsm: list
     omega01: list
-    Q1: list
-    Q2: list
+    q1_param: list
+    q2_param: list
     pid_coefs1_fsm: list
     pid_coefs2_fsm: list
     linear_angle_detector: str
@@ -47,3 +47,5 @@ class TelescopeSystemDto(BaseModel):
     responsivity: float
     uniform_spot: str
     radius: float
+
+

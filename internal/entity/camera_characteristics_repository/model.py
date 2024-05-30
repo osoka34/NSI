@@ -28,12 +28,12 @@ class TelescopeSystem(Base):
     target_internal_state = Column(ARRAY(Float))
     sigma_state_noise = Column(Float)
     constant_system_params = Column(String(50))
-    J1 = Column(Float)
-    J2 = Column(Float)
-    J3 = Column(Float)
-    J4 = Column(Float)
-    Kg = Column(Float)
-    Fs = Column(Float)
+    j1_param = Column(Float)
+    j2_param = Column(Float)
+    j3_param = Column(Float)
+    j4_param = Column(Float)
+    kg = Column(Float)
+    fs = Column(Float)
     pid_coefs1 = Column(ARRAY(Float))
     pid_coefs2 = Column(ARRAY(Float))
     control_vector = Column(ARRAY(Float))
@@ -46,8 +46,8 @@ class TelescopeSystem(Base):
     params_fsm = Column(String(50))
     control_vector_fsm = Column(ARRAY(Float))
     omega01 = Column(ARRAY(Float))
-    Q1 = Column(ARRAY(Float))
-    Q2 = Column(ARRAY(Float))
+    q1_param = Column(ARRAY(Float))
+    q2_param = Column(ARRAY(Float))
     pid_coefs1_fsm = Column(ARRAY(Float))
     pid_coefs2_fsm = Column(ARRAY(Float))
     linear_angle_detector = Column(String(50))
@@ -59,3 +59,56 @@ class TelescopeSystem(Base):
     responsivity = Column(Float)
     uniform_spot = Column(String(50))
     radius = Column(Float)
+
+    def to_dict(self):
+        """
+        Converts the attributes of the TelescopeSystem instance into a dictionary.
+        """
+        return {
+            'telescope': self.telescope,
+            'aperture_params': self.aperture_params,
+            'diameter': self.diameter,
+            'effective_radiation_waist_factor': self.effective_radiation_waist_factor,
+            'magnification_system': self.magnification_system,
+            'magnification': self.magnification,
+            'inversion': self.inversion,
+            'gimbal': self.gimbal,
+            'system_state': self.system_state,
+            'x_vector': self.x_vector,
+            'target_internal_state': self.target_internal_state,
+            'sigma_state_noise': self.sigma_state_noise,
+            'constant_system_params': self.constant_system_params,
+            'j1_param': self.j1_param,
+            'j2_param': self.j2_param,
+            'j3_param': self.j3_param,
+            'j4_param': self.j4_param,
+            'kg': self.kg,
+            'fs': self.fs,
+            'pid_coefs1': self.pid_coefs1,
+            'pid_coefs2': self.pid_coefs2,
+            'control_vector': self.control_vector,
+            'real_fsm': self.real_fsm,
+            'state_fsm': self.state_fsm,
+            'x_vector_fsm': self.x_vector_fsm,
+            'target_internal_state_fsm': self.target_internal_state_fsm,
+            'sigma_fsm': self.sigma_fsm,
+            'state_limits': self.state_limits,
+            'params_fsm': self.params_fsm,
+            'control_vector_fsm': self.control_vector_fsm,
+            'omega01': self.omega01,
+            'q1_param': self.q1_param,
+            'q2_param': self.q2_param,
+            'pid_coefs1_fsm': self.pid_coefs1_fsm,
+            'pid_coefs2_fsm': self.pid_coefs2_fsm,
+            'linear_angle_detector': self.linear_angle_detector,
+            'ideal_lens': self.ideal_lens,
+            'distance_to_photodetector': self.distance_to_photodetector,
+            'matrix_photodetector': self.matrix_photodetector,
+            'pixel_size': self.pixel_size,
+            'resolution': self.resolution,
+            'responsivity': self.responsivity,
+            'uniform_spot': self.uniform_spot,
+            'radius': self.radius
+        }
+
+
