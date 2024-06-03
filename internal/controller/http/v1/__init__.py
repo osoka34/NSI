@@ -1,6 +1,9 @@
 from fastapi import APIRouter
 
-from . import nsi, health, middleware, graph_algos, user, cloudlines, cloud_station, ground_points, named_const, telescope_system
+from . import (nsi, health, middleware, graph_algos, user,
+               cloudlines, cloud_station, ground_points,
+               named_const, telescope_system, platform_ca,
+               project)
 
 router = APIRouter()
 router.include_router(
@@ -54,5 +57,18 @@ router.include_router(
     telescope_system.router,
     prefix='/telescope_system',
     tags=['telescope_system'],
+)
+
+router.include_router(
+    platform_ca.router,
+    prefix='/platform_ca',
+    tags=['platform_ca'],
+)
+
+
+router.include_router(
+    project.router,
+    prefix='/project',
+    tags=['project'],
 )
 
