@@ -16,4 +16,6 @@ from .application_cloudlines import ApplicationCloudlinesService
 from .application_named_const import ApplicationNamedConstService
 from .application_telescope_system import ApplicationTelescopeSystemService
 from .application_ground_points import ApplicationGroundPointsService
+from .application_platform_ca import ApplicationPlatformCAService
+from .application_project import ApplicationProjectService
 

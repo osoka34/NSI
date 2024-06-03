@@ -8,6 +8,9 @@ from internal.dto.model_telescope_system import TelescopeSystemDto
 from internal.dto.model_named_const import NamedConstantsDto
 from internal.dto.model_ground_points import GroundPointsDto
 from internal.dto.model_cloudlines import CloudlinesDto
+from internal.dto.model_platform_ca import PlatformCADto
+from internal.dto.model_project import ProjectDto
+
 
 
 class ById (BaseModel):
