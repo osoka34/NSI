@@ -1,4 +1,4 @@
-CREATE TABLE space_platforms (
+CREATE TABLE platform_ca (
     id serial primary key,
     structure VARCHAR(500) DEFAULT '',
     weight DECIMAL(10, 2) DEFAULT 0,
