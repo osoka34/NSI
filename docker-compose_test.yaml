@@ -3,23 +3,25 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    container_name: postgres_container
+    container_name: postgres_container_test
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "12000:5432"
+      - "12001:5432"
     volumes:
       - ./migrations:/docker-entrypoint-initdb.d
 
   app:
 #    network_mode: host
-    container_name: nsi
+    container_name: nsi_test
+    environment:
+        - TEST=true
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile_test
     ports:
-      - "805:805"
+      - "806:806"
 #      - "12000:12000"
     depends_on:
       - postgres

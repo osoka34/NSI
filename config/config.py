@@ -8,6 +8,13 @@ CONFIG = {
         # 'host': '0.0.0.0',
         'port': '5432'
         # 'port': '12000'
+    },
+    'test_db': {
+            'database': 'postgres',
+            'user': 'postgres',
+            'password': 'postgres',
+            'host': 'postgres_container_test',
+            'port': '5432'
     }
 }
 
