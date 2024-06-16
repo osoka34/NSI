@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from . import (nsi, health, middleware, graph_algos, user,
                cloudlines, cloud_station, ground_points,
                named_const, telescope_system, platform_ca,
-               project)
+               project, ca_parameters)
 
 router = APIRouter()
 router.include_router(
@@ -70,5 +70,11 @@ router.include_router(
     project.router,
     prefix='/project',
     tags=['project'],
+)
+
+router.include_router(
+    ca_parameters.router,
+    prefix='/ca_parameters',
+    tags=['ca_parameters'],
 )
 

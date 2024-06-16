@@ -18,4 +18,5 @@ from .application_telescope_system import ApplicationTelescopeSystemService
 from .application_ground_points import ApplicationGroundPointsService
 from .application_platform_ca import ApplicationPlatformCAService
 from .application_project import ApplicationProjectService
+from .application_ca_parameters import ApplicationCAParametersService
 

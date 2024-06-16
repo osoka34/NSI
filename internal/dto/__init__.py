@@ -10,6 +10,7 @@ from internal.dto.model_ground_points import GroundPointsDto
 from internal.dto.model_cloudlines import CloudlinesDto
 from internal.dto.model_platform_ca import PlatformCADto
 from internal.dto.model_project import ProjectDto
+from internal.dto.model_ca_parameters import CAParametersDto, CAPlatformViewDto
 
 
 
