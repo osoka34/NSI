@@ -1,0 +1,2 @@
+from internal.entity.ca_parameters.repository import CAParametersRepository
+from internal.entity.ca_parameters.model import CAParameters, CAPlatformView

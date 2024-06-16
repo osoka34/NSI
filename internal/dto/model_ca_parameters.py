@@ -1,0 +1,60 @@
+from pydantic import BaseModel
+
+
+class CAParametersDto(BaseModel):
+    id: int
+    name_of_the_ca: str
+    number_of_spectral_channels_px: int
+    parameters_of_the_panchromatic_channel_nm: str
+    number_of_spectral_channels_ms: int
+    parameters_of_the_red_channel_nm: str
+    parameters_of_the_green_channel_nm: str
+    parameters_of_the_blue_channel_nm: str
+    parameters_of_the_near_infrared_channel_nm: str
+    adc_bit_depth_bits: int
+    bit_depth_of_transmitted_information_bits: int
+    shooting_mode: str
+    interface: str
+    data_stream_px_gbps: float
+    data_stream_ms_gbps: float
+    capture_bandwidth_km: float
+    maximum_route_length_km: float
+    length_of_the_information_line_of_the_ccd_matrix: str
+    lens_f_d_mm: str
+    pixel_size: float
+
+
+class CAPlatformViewDto(BaseModel):
+    ca_id: int
+    name_of_the_ca: str
+    number_of_spectral_channels_px: int
+    parameters_of_the_panchromatic_channel_nm: str
+    number_of_spectral_channels_ms: int
+    parameters_of_the_red_channel_nm: str
+    parameters_of_the_green_channel_nm: str
+    parameters_of_the_blue_channel_nm: str
+    parameters_of_the_near_infrared_channel_nm: str
+    adc_bit_depth_bits: int
+    bit_depth_of_transmitted_information_bits: int
+    shooting_mode: str
+    interface: str
+    data_stream_px_gbps: float
+    data_stream_ms_gbps: float
+    capture_bandwidth_km: float
+    maximum_route_length_km: float
+    length_of_the_information_line_of_the_ccd_matrix: str
+    lens_f_d_mm: str
+    pixel_size: float
+    platform_id: int
+    structure: str
+    weight: float
+    power_consumption_in_standby_mode: float
+    power_consumption_in_the_high_speed_mode: float
+    power_consumption_in_the_orbit_correction_mode: float
+    power_consumption_in_safe_mode: float
+    power_consumption_in_ca_operational_mode: float
+    average_power_consumption_per_cycle: float
+    mdr: float
+    sac: float
+    reliability_budget: float
+    type_platform: int
